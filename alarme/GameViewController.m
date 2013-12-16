@@ -70,7 +70,7 @@
         if (alarmDateHour < (hour+1))
         {
             [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] music]];
-            i = [[APP_MNG.dataAccess returnAlarms] count];
+            break;
         }
     }
     

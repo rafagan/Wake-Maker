@@ -58,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int number = [[APP_MNG.dataAccess returnAlarms] count];
+    NSUInteger number = [[APP_MNG.dataAccess returnAlarms] count];
     return number;
 }
 

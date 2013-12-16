@@ -50,7 +50,7 @@
         
         for (int i = 0; i < [[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]days] count]; i++)
         {
-            int j = [[[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row] days] objectAtIndex:i] integerValue];
+            NSUInteger j = [[[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row] days] objectAtIndex:i] integerValue];
             
             switch (j) {
                 case 1:
@@ -194,13 +194,13 @@
     
     if (!_editing)
     {
-        _alarm = [Alarm createAlarmWithMinutes:minutes Hour:hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic];
+        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
     }
     else
     {
         [APP_MNG.dataAccess removeAlarm:[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]];
-        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:minutes Hour:hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic] atIndex:_row];
+        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic] atIndex:_row];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
