@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 André Traleski de Campos. All rights reserved.
 //
 
-#import "symbol.h"
+#import "Symbol.h"
 
-@implementation symbol
+@implementation Symbol
 
 - (id)init
 {

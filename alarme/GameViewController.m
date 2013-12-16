@@ -9,7 +9,7 @@
 #import "GameViewController.h"
 #import "ApplicationManager.h"
 #import "CombinationGenerator.h"
-#import "symbol.h"
+#import "Symbol.h"
 
 @interface GameViewController ()
 
@@ -47,8 +47,12 @@
         NSInteger alarmDateHour = [components hour];
         if (alarmDateHour < (hour+1))
         {
+<<<<<<< HEAD
             index = i;
             typeIsMusic = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] alarmSystemTypeMusic];
+=======
+            [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] music]];
+>>>>>>> 942482921f9a6d0f33be27d39fd478ac1abfd5c5
             break;
         }
     }
@@ -122,7 +126,7 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    symbol* s = [[[CombinationGenerator sharedGenerator] returnSymbols] objectAtIndex:row];
+    Symbol* s = [[[CombinationGenerator sharedGenerator] returnSymbols] objectAtIndex:row];
     UIImageView* imgV = [[UIImageView alloc] initWithImage:s.img];
     return imgV;
 }
@@ -171,7 +175,7 @@
     int x = 60;
     int offset = 20;
     int y = self.view.window.bounds.size.height/2 - 140;
-    symbol* s;
+    Symbol* s;
     CGRect rect= CGRectMake(x*i-offset, y, 50, 50);
     
     s = [rando objectAtIndex:0];
