@@ -192,15 +192,20 @@
     hour = [componentsOfTime hour];
     minutes = [componentsOfTime minute];
     
+    if (selectedMusic == nil)
+        isMusic = false;
+    else
+        isMusic = true;
+    
     if (!_editing)
     {
-        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic];
+        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
     }
     else
     {
         [APP_MNG.dataAccess removeAlarm:[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]];
-        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic] atIndex:_row];
+        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic] atIndex:_row];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

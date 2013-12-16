@@ -15,6 +15,7 @@
 {
     int points;
     float volume;
+    bool typeIsMusic;
     MPMusicPlayerController* appAlarmPlayer;
 }
 - (IBAction)okBt:(id)sender;

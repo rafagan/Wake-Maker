@@ -31,35 +31,13 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    /*
-    [[AVAudioSession sharedInstance]
-     setCategory: AVAudioSessionCategoryPlayback
-     error: nil];
-    
-    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"alarm30" ofType:@"mp3"];
-    NSURL *soundFileURL = [NSURL fileURLWithPath:soundPath];
-    NSError* error1 ;
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: soundFileURL error: &error1];
-    if (nil == _audioPlayer)
-    {
-        NSLog(@"Faild to play %@, %@", soundFileURL, error1);
-        return;
-    }
-    
-    [_audioPlayer prepareToPlay];
-    [_audioPlayer setVolume:volume];
-    _audioPlayer.numberOfLoops = -1;
-    NSLog(@"Started playing sound");
-    [_audioPlayer play];
-    */
-    
-    [appAlarmPlayer setShuffleMode: MPMusicShuffleModeOff];
-    [appAlarmPlayer setRepeatMode: MPMusicRepeatModeOne];
-    
     NSDate* now = [[NSDate alloc] init];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:(NSHourCalendarUnit) fromDate:now];
     NSInteger hour = [components hour];
+    
+    typeIsMusic = false;
+    int index = 0;
     
     for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count]; i++)
     {
@@ -69,12 +47,43 @@
         NSInteger alarmDateHour = [components hour];
         if (alarmDateHour < (hour+1))
         {
-            [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] music]];
+            index = i;
+            typeIsMusic = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] alarmSystemTypeMusic];
             break;
         }
     }
     
-    [appAlarmPlayer play];
+    if (typeIsMusic)
+    {
+        [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:index] music]];
+        [appAlarmPlayer setShuffleMode: MPMusicShuffleModeOff];
+        [appAlarmPlayer setRepeatMode: MPMusicRepeatModeOne];
+        [appAlarmPlayer play];
+    }
+    else
+    {
+        [[AVAudioSession sharedInstance]
+         setCategory: AVAudioSessionCategoryPlayback
+         error: nil];
+        
+        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"alarm30" ofType:@"mp3"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundPath];
+        NSError* error1 ;
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: soundFileURL error: &error1];
+        if (nil == _audioPlayer)
+        {
+            NSLog(@"Faild to play %@, %@", soundFileURL, error1);
+            return;
+        }
+        
+        [_audioPlayer prepareToPlay];
+        [_audioPlayer setVolume:volume];
+        _audioPlayer.numberOfLoops = -1;
+        NSLog(@"Started playing sound");
+        [_audioPlayer play];
+    }
+    
+    
 }
 
 - (void)viewDidLoad
@@ -128,8 +137,10 @@
         
         if (points == 3)
         {
-            [appAlarmPlayer stop];
-            //[_audioPlayer stop];
+            if (typeIsMusic)
+                [appAlarmPlayer stop];
+            else
+                [_audioPlayer stop];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         else
