@@ -7,7 +7,6 @@
 //
 
 #import "DataSourceDB.h"
-#import "Alarm.h"
 
 @interface DataSourceDB ()
 
@@ -24,9 +23,6 @@
         NSString *docsDir;
         NSArray *dirPaths;
         BOOL BDExist;
-        
-//        contacts = [[NSMutableArray alloc] init];
-//        qryContacts = [[NSMutableArray alloc] init];
         
         //Pega o diretório de documentos
         dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -51,9 +47,6 @@
             
             [self initializeDatabase];
             
-
-//            [self loadData];
-            
             sqlite3_close(_systemDatabase);
         } else {
             NSLog(@"Falha ao criar/abrir o BD");
@@ -65,8 +58,9 @@
 - (void)initializeDatabase {
     char *errMsg;
     
+//    sqlite3_exec(_systemDatabase, "DROP TABLE alarm", NULL, NULL, &errMsg);
     const char *sql_stmt =
-        "CREATE TABLE IF NOT EXISTS alarm (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT NOT NULL, hour INTEGER NOT NULL, minute INTEGER NOT NULL, sun BOOLEAN, mon BOOLEAN, tue BOOLEAN, wed BOOLEAN, thu BOOLEAN, fri BOOLEAN, sat BOOLEAN)";
+        "CREATE TABLE IF NOT EXISTS alarm (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT NOT NULL, hour INTEGER NOT NULL, minute INTEGER NOT NULL, days INTEGER NOT NULL)";
     if (sqlite3_exec(_systemDatabase, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
         NSLog(@"Falha ao criar as tabelas do banco");
     else
@@ -74,8 +68,7 @@
 
 }
 
-- (NSMutableArray*)getAllData:(NSString *)dataType
-{
+- (NSMutableArray*)getAllAlarms {
     const char *dbpath = [_databasePath UTF8String];
     sqlite3_stmt *statement;
     NSMutableArray *alarms = [NSMutableArray new];
@@ -86,13 +79,15 @@
         if (sqlite3_prepare_v2(_systemDatabase, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
             
             while (sqlite3_step(statement) == SQLITE_ROW) {
-                NSString *cod = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
-                NSString *name = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-                NSString *city = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+                NSUInteger myId = sqlite3_column_int64(statement, 0);
+                NSString *description = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                int hour = sqlite3_column_int(statement, 2);
+                int minute = sqlite3_column_int(statement, 3);
+                NSInteger days = sqlite3_column_int(statement, 4);
                 
-//                Contact *contact = [[Contact alloc] initWithName:name City:city];
-//                [contact setCod:cod];
-//                [contacts addObject:contact];
+                Alarm* a = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil];
+                a.myId = myId;
+                [alarms addObject:a];
             }
             sqlite3_finalize(statement);
         }
@@ -101,23 +96,57 @@
     return alarms;
 }
 
-- (id)readDataSearchingById:(int)id {
+- (Alarm*)getAlarmByDescription:(NSString*)desc
+{
+    const char *dbpath = [_databasePath UTF8String];
+    sqlite3_stmt *statement;
+    Alarm *alarm = nil;
     
+    if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT * FROM alarm WHERE description = \"%s\"", [desc UTF8String]];
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(_systemDatabase, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
+            
+            if (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                NSUInteger myId = sqlite3_column_int64(statement, 0);
+                NSString *description = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
+                int hour = sqlite3_column_int(statement, 2);
+                int minute = sqlite3_column_int(statement, 3);
+                NSInteger days = sqlite3_column_int(statement, 4);
+                
+                alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil];
+                alarm.myId = myId;
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_systemDatabase);
+    }
+    return alarm;
+}
+
+- (NSInteger)insertAlarm:(Alarm*)alarm {
+    char *errMsg;
+    const char *dbpath = [_databasePath UTF8String];
+    BOOL state;
     
-    return nil;
-}
-
-- (void)removeDataSearchingByName:(NSString *)name {
-    [dataSource removeObjectForKey:name];
-}
-
-- (void)updateDataSearchingByName:(NSString*)name withObject:(id)object {
-    [dataSource removeObjectForKey:name];
-    [dataSource setObject:object forKey:name];
-}
-
-- (void)createDataWithName:(NSString*)name andObject:(id)object {
-    [dataSource setObject:object forKey:name];
+    if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
+        NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO alarm (description, hour, minute, days) VALUES (\"%s\", \"%d\", \"%d\", \"%ld\")",
+                               [alarm.description UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days]];
+        const char *insert_stmt = [insertSQL UTF8String];
+        if (sqlite3_exec(_systemDatabase, insert_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+            state = NO;
+        else
+            state = YES;
+        sqlite3_close(_systemDatabase);
+    } else {
+        state = NO;
+    }
+    
+    if(!state) {printf("%s\n",errMsg);return -1;}
+    
+    return [self getAlarmByDescription:alarm.description].myId;
 }
 
 @end

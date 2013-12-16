@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IDataSource.h"
 #import <sqlite3.h>
+#import "Alarm.h"
 
-
-@interface DataSourceDB : NSObject <IDataSource> {
-    @private
-    NSMutableDictionary* dataSource;
-}
+@interface DataSourceDB : NSObject
 
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *systemDatabase;
+
+- (NSMutableArray*)getAllAlarms;
+- (Alarm*)getAlarmByDescription:(NSString*)desc;
+- (NSInteger)insertAlarm:(Alarm*)alarm;
 
 @end

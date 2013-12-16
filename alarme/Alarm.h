@@ -9,7 +9,11 @@
 
 @interface Alarm : NSObject
 
-+(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString*)msg Days:(NSMutableArray*)ds Music:(MPMediaItemCollection*)mu;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg Days:(NSMutableArray*)ds Music:(MPMediaItemCollection*)mu;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(MPMediaItemCollection*)mu;
+
++ (NSMutableArray*)daysMaskToDaysArray:(NSInteger)ds;
++ (NSInteger)daysArrayToDaysMask:(NSMutableArray*)ds;
 
 @property MPMediaItemCollection* music;
 @property NSMutableArray* notifications;
@@ -19,5 +23,6 @@
 @property NSString* alertBody;
 @property int minutes;
 @property int hour;
+@property int myId;
 
 @end

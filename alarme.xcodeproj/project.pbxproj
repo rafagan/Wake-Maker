@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2611AA13185F9CC100C241E8 /* DataSourceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AA12185F9CC100C241E8 /* DataSourceDB.m */; };
+		2611AA15185FBC0800C241E8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2611AA14185FBC0800C241E8 /* libsqlite3.dylib */; };
 		CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40DB7C185A2342005F5D1C /* CustomCell.m */; };
 		CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB81185A33F9005F5D1C /* CustomCell.xib */; };
 		CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB83185A4463005F5D1C /* alarm30.mp3 */; };
@@ -41,7 +43,6 @@
 		CDDD78841857925600A27585 /* ApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD78831857925600A27585 /* ApplicationManager.m */; };
 		CDDD7887185792E800A27585 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD7886185792E800A27585 /* Alarm.m */; };
 		CDDD788A1857938B00A27585 /* DataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD78891857938B00A27585 /* DataAccess.m */; };
-		CDF4CF931857AA7D00643587 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CF921857AA7D00643587 /* DataSourceFactory.m */; };
 		CDF4CF971857E85100643587 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CF951857E85100643587 /* AddViewController.m */; };
 		CDF4CF981857E85100643587 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF4CF961857E85100643587 /* AddViewController.xib */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2611AA11185F9CC100C241E8 /* DataSourceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDB.h; sourceTree = "<group>"; };
+		2611AA12185F9CC100C241E8 /* DataSourceDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDB.m; sourceTree = "<group>"; };
+		2611AA14185FBC0800C241E8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CD40DB7B185A2342005F5D1C /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		CD40DB7C185A2342005F5D1C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		CD40DB81185A33F9005F5D1C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
@@ -104,9 +108,6 @@
 		CDDD7886185792E800A27585 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		CDDD78881857938B00A27585 /* DataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccess.h; sourceTree = "<group>"; };
 		CDDD78891857938B00A27585 /* DataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccess.m; sourceTree = "<group>"; };
-		CDF4CF8E1857AA6100643587 /* IDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDataSource.h; sourceTree = "<group>"; };
-		CDF4CF911857AA7D00643587 /* DataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceFactory.h; sourceTree = "<group>"; };
-		CDF4CF921857AA7D00643587 /* DataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceFactory.m; sourceTree = "<group>"; };
 		CDF4CF941857E85100643587 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		CDF4CF951857E85100643587 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		CDF4CF961857E85100643587 /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2611AA15185FBC0800C241E8 /* libsqlite3.dylib in Frameworks */,
 				CD495466185E9F980028617E /* MediaPlayer.framework in Frameworks */,
 				CD88B9491858D57400B978A1 /* AVFoundation.framework in Frameworks */,
 				CDDD78461857912300A27585 /* CoreGraphics.framework in Frameworks */,
@@ -180,6 +182,7 @@
 		CDDD78421857912300A27585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2611AA14185FBC0800C241E8 /* libsqlite3.dylib */,
 				CD495465185E9F980028617E /* MediaPlayer.framework */,
 				CD88B9481858D57400B978A1 /* AVFoundation.framework */,
 				CDDD78431857912300A27585 /* Foundation.framework */,
@@ -269,15 +272,14 @@
 		CDDD78811857922100A27585 /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				2611AA11185F9CC100C241E8 /* DataSourceDB.h */,
+				2611AA12185F9CC100C241E8 /* DataSourceDB.m */,
 				CD49540F185A7AFF0028617E /* CombinationGenerator.h */,
 				CD495410185A7AFF0028617E /* CombinationGenerator.m */,
 				CDDD78821857925600A27585 /* ApplicationManager.h */,
 				CDDD78831857925600A27585 /* ApplicationManager.m */,
-				CDF4CF8E1857AA6100643587 /* IDataSource.h */,
 				CDDD78881857938B00A27585 /* DataAccess.h */,
 				CDDD78891857938B00A27585 /* DataAccess.m */,
-				CDF4CF911857AA7D00643587 /* DataSourceFactory.h */,
-				CDF4CF921857AA7D00643587 /* DataSourceFactory.m */,
 			);
 			name = Information;
 			sourceTree = "<group>";
@@ -402,7 +404,6 @@
 			files = (
 				CDDD787D185791D800A27585 /* AlarmViewController.m in Sources */,
 				CD49540E185A7AF30028617E /* Symbol.m in Sources */,
-				CDF4CF931857AA7D00643587 /* DataSourceFactory.m in Sources */,
 				CDDD788A1857938B00A27585 /* DataAccess.m in Sources */,
 				CDDD7887185792E800A27585 /* Alarm.m in Sources */,
 				CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */,
@@ -412,6 +413,7 @@
 				CDDD78751857916B00A27585 /* MainViewController.m in Sources */,
 				CD495409185A7ACE0028617E /* GameViewController.m in Sources */,
 				CD495411185A7AFF0028617E /* CombinationGenerator.m in Sources */,
+				2611AA13185F9CC100C241E8 /* DataSourceDB.m in Sources */,
 				CDDD78501857912300A27585 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

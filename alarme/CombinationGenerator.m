@@ -63,7 +63,7 @@
             s = [[Symbol alloc] initWithImg:@"symbol4.jpg" Name:@"Polygon" Index:3];
             x = 3;
         }
-    
+        
         [combination addObject:s];
     }
     
