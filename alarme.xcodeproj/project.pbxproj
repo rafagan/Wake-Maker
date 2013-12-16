@@ -18,6 +18,7 @@
 		CD495418185A7B1C0028617E /* symbol2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495414185A7B1C0028617E /* symbol2.jpg */; };
 		CD495419185A7B1C0028617E /* symbol3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495415185A7B1C0028617E /* symbol3.jpg */; };
 		CD49541A185A7B1C0028617E /* symbol4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495416185A7B1C0028617E /* symbol4.jpg */; };
+		CD495466185E9F980028617E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD495465185E9F980028617E /* MediaPlayer.framework */; };
 		CD88B9491858D57400B978A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B9481858D57400B978A1 /* AVFoundation.framework */; };
 		CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD88B94A1858E85F00B978A1 /* alarm.m4a */; };
 		CDC1E0F618579D1B00F2D6A6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */; };
@@ -71,6 +72,7 @@
 		CD495414185A7B1C0028617E /* symbol2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol2.jpg; sourceTree = "<group>"; };
 		CD495415185A7B1C0028617E /* symbol3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol3.jpg; sourceTree = "<group>"; };
 		CD495416185A7B1C0028617E /* symbol4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol4.jpg; sourceTree = "<group>"; };
+		CD495465185E9F980028617E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CD88B9481858D57400B978A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CD88B94A1858E85F00B978A1 /* alarm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm.m4a; sourceTree = "<group>"; };
 		CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD495466185E9F980028617E /* MediaPlayer.framework in Frameworks */,
 				CD88B9491858D57400B978A1 /* AVFoundation.framework in Frameworks */,
 				CDDD78461857912300A27585 /* CoreGraphics.framework in Frameworks */,
 				CDDD78481857912300A27585 /* UIKit.framework in Frameworks */,
@@ -177,6 +180,7 @@
 		CDDD78421857912300A27585 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD495465185E9F980028617E /* MediaPlayer.framework */,
 				CD88B9481858D57400B978A1 /* AVFoundation.framework */,
 				CDDD78431857912300A27585 /* Foundation.framework */,
 				CDDD78451857912300A27585 /* CoreGraphics.framework */,
@@ -530,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "alarme/alarme-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "alarme/alarme-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -543,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "alarme/alarme-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "alarme/alarme-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

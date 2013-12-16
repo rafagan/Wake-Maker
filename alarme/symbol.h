@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 André Traleski de Campos. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface symbol : NSObject

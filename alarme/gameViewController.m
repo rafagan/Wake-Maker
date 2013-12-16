@@ -7,6 +7,7 @@
 //
 
 #import "gameViewController.h"
+#import "ApplicationManager.h"
 #import "combinationGenerator.h"
 #import "symbol.h"
 
@@ -20,10 +21,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        appAlarmPlayer = [MPMusicPlayerController applicationMusicPlayer];
         points = 0;
         volume = 0.5;
-        [self setTitle:@"MemoryGame"];
-        [self setEdgesForExtendedLayout:UIRectEdgeNone];
         // Custom initialization
     }
     return self;
@@ -31,6 +31,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    /*
     [[AVAudioSession sharedInstance]
      setCategory: AVAudioSessionCategoryPlayback
      error: nil];
@@ -50,6 +51,30 @@
     _audioPlayer.numberOfLoops = -1;
     NSLog(@"Started playing sound");
     [_audioPlayer play];
+    */
+    
+    [appAlarmPlayer setShuffleMode: MPMusicShuffleModeOff];
+    [appAlarmPlayer setRepeatMode: MPMusicRepeatModeOne];
+    
+    NSDate* now = [[NSDate alloc] init];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit) fromDate:now];
+    NSInteger hour = [components hour];
+    
+    for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count]; i++)
+    {
+        NSDate* alarmDate = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] date];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [calendar components:(NSHourCalendarUnit) fromDate:alarmDate];
+        NSInteger alarmDateHour = [components hour];
+        if (alarmDateHour < (hour+1))
+        {
+            [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] music]];
+            i = [[APP_MNG.dataAccess returnAlarms] count];
+        }
+    }
+    
+    [appAlarmPlayer play];
 }
 
 - (void)viewDidLoad
@@ -103,7 +128,8 @@
         
         if (points == 3)
         {
-            [_audioPlayer stop];
+            [appAlarmPlayer stop];
+            //[_audioPlayer stop];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         else

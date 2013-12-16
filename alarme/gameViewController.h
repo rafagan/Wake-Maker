@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface gameViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     int points;
     float volume;
+    MPMusicPlayerController* appAlarmPlayer;
 }
 - (IBAction)okBt:(id)sender;
 - (IBAction)startBt:(id)sender;

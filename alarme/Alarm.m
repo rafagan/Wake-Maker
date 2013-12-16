@@ -10,13 +10,14 @@
 
 @implementation Alarm
 
-+ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString *)msg Days:(NSMutableArray *)ds
++ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu
 {
     Alarm* alarm = [[Alarm alloc] init];
     
     alarm.notifications = [[NSMutableArray alloc] init];
     alarm.days = [[NSMutableArray alloc] init];
     
+    alarm.music = mu;
     alarm.qtdDays = [ds count];
     alarm.days = ds;
     alarm.minutes = mts;
@@ -49,7 +50,7 @@
         notif.repeatInterval = NSWeekCalendarUnit;
         notif.soundName = @"alarm.m4a";
         notif.applicationIconBadgeNumber = -1;
-        
+
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setTimeStyle:NSDateFormatterShortStyle];
         [formatter setDateStyle:NSDateFormatterFullStyle];
