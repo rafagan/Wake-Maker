@@ -10,13 +10,14 @@
 
 @implementation Alarm
 
-+ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu
++ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu AlarmMusicSystem:(bool)type
 {
     Alarm* alarm = [[Alarm alloc] init];
     
     alarm.notifications = [[NSMutableArray alloc] init];
     alarm.days = [[NSMutableArray alloc] init];
     
+    alarm.alarmSystemTypeMusic = type;
     alarm.music = mu;
     alarm.qtdDays = [ds count];
     alarm.days = ds;
