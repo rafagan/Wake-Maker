@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface symbol : NSObject
+@interface Symbol : NSObject
 @property UIImage* img;
 @property UIImageView* imgView;
 @property NSString* imgName;

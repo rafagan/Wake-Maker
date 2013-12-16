@@ -12,7 +12,7 @@
 		CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB83185A4463005F5D1C /* alarm30.mp3 */; };
 		CD495409185A7ACE0028617E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495408185A7ACE0028617E /* GameViewController.m */; };
 		CD49540B185A7AD90028617E /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD49540A185A7AD90028617E /* GameViewController.xib */; };
-		CD49540E185A7AF30028617E /* symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49540D185A7AF30028617E /* symbol.m */; };
+		CD49540E185A7AF30028617E /* Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49540D185A7AF30028617E /* Symbol.m */; };
 		CD495411185A7AFF0028617E /* CombinationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495410185A7AFF0028617E /* CombinationGenerator.m */; };
 		CD495417185A7B1C0028617E /* symbol1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495413185A7B1C0028617E /* symbol1.jpg */; };
 		CD495418185A7B1C0028617E /* symbol2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495414185A7B1C0028617E /* symbol2.jpg */; };
@@ -64,8 +64,8 @@
 		CD495407185A7ACE0028617E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		CD495408185A7ACE0028617E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		CD49540A185A7AD90028617E /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
-		CD49540C185A7AF30028617E /* symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symbol.h; sourceTree = "<group>"; };
-		CD49540D185A7AF30028617E /* symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = symbol.m; sourceTree = "<group>"; };
+		CD49540C185A7AF30028617E /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		CD49540D185A7AF30028617E /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Symbol.m; sourceTree = "<group>"; };
 		CD49540F185A7AFF0028617E /* CombinationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinationGenerator.h; sourceTree = "<group>"; };
 		CD495410185A7AFF0028617E /* CombinationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinationGenerator.m; sourceTree = "<group>"; };
 		CD495413185A7B1C0028617E /* symbol1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol1.jpg; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 		CDF4CF8D1857AA1C00643587 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD49540C185A7AF30028617E /* symbol.h */,
-				CD49540D185A7AF30028617E /* symbol.m */,
+				CD49540C185A7AF30028617E /* Symbol.h */,
+				CD49540D185A7AF30028617E /* Symbol.m */,
 				CDDD7885185792E800A27585 /* Alarm.h */,
 				CDDD7886185792E800A27585 /* Alarm.m */,
 			);
@@ -401,7 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDD787D185791D800A27585 /* AlarmViewController.m in Sources */,
-				CD49540E185A7AF30028617E /* symbol.m in Sources */,
+				CD49540E185A7AF30028617E /* Symbol.m in Sources */,
 				CDF4CF931857AA7D00643587 /* DataSourceFactory.m in Sources */,
 				CDDD788A1857938B00A27585 /* DataAccess.m in Sources */,
 				CDDD7887185792E800A27585 /* Alarm.m in Sources */,
