@@ -11,6 +11,7 @@
                 <outlet property="picker" destination="bvY-ZG-FVM" id="cYZ-Mf-zvE"/>
                 <outlet property="pointsLabel" destination="ind-qz-Awx" id="nrl-Xn-epu"/>
                 <outlet property="skipBtOut" destination="juX-wW-2jq" id="mSh-ES-0sr"/>
+                <outlet property="snoozeBtOut" destination="mrE-yW-XGf" id="UIp-UD-Goe"/>
                 <outlet property="startBtOut" destination="MKO-Zv-ctP" id="aqj-RZ-ESt"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -31,7 +32,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKO-Zv-ctP">
-                    <rect key="frame" x="137" y="208" width="46" height="30"/>
+                    <rect key="frame" x="20" y="216" width="96" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Start">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,6 +73,16 @@
                         <outlet property="delegate" destination="-1" id="eUR-VH-ywL"/>
                     </connections>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrE-yW-XGf">
+                    <rect key="frame" x="210" y="216" width="90" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Snooze">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="snoozeBtAc:" destination="-1" eventType="touchUpInside" id="c09-mS-s7A"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

@@ -11,6 +11,7 @@
 
 +(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString*)msg Days:(NSMutableArray*)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type;
 
+@property UILocalNotification* snooze;
 @property bool alarmSystemTypeMusic;
 @property MPMediaItemCollection* music;
 @property NSMutableArray* notifications;

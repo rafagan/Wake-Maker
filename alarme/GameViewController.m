@@ -37,7 +37,7 @@
     NSInteger hour = [components hour];
     
     typeIsMusic = false;
-    int index = 0;
+    index = 0;
     
     for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count]; i++)
     {
@@ -135,7 +135,7 @@
         points ++;
         [[self pointsLabel] setText:[NSString stringWithFormat:@"%d",points]];
         
-        if (points == 3)
+        if (points == 2)
         {
             if (typeIsMusic)
                 [appAlarmPlayer stop];
@@ -148,9 +148,6 @@
     }
     else
     {
-        if (points > 0)
-            points--;
-        [[self pointsLabel] setText:[NSString stringWithFormat:@"%d",points]];
         [self showComb];
     }
 }
@@ -159,6 +156,7 @@
 {
     [[self startBtOut] setHidden:YES];
     [[self gameOverLabel] setHidden:YES];
+    [[self snoozeBtOut] setHidden:YES];
     self.skipBtOut.enabled = YES;
     self.okBtOut.enabled = YES;
     [self showComb];
@@ -195,7 +193,7 @@
     s = [rando objectAtIndex:3];
     [s.imgView setFrame:rect];
     [self.view addSubview:[[rando objectAtIndex:3] imgView]];
-    [NSTimer scheduledTimerWithTimeInterval:2.2
+    [NSTimer scheduledTimerWithTimeInterval:2.5
                                      target:self
                                    selector:@selector(hideComb)
                                    userInfo:nil
@@ -218,5 +216,56 @@
         if (v.frame.origin.y == self.view.window.bounds.size.height/2-140)
             [v removeFromSuperview];
     }
+}
+
+- (IBAction)snoozeBtAc:(id)sender
+{
+    if (typeIsMusic)
+        [appAlarmPlayer stop];
+    else
+        [_audioPlayer stop];
+    
+    NSDate *date = [[NSDate alloc] init];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:(NSMinuteCalendarUnit | NSHourCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit) fromDate:date];
+    NSInteger minute = [components minute];
+    NSInteger hour = [components hour];
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    NSInteger year = [components year];
+    
+    NSTimeZone* zone = [NSTimeZone timeZoneWithAbbreviation:@"America/Sao_Paulo"];
+    UILocalNotification* notif = [[UILocalNotification alloc] init];
+    NSDateComponents* comp = [[NSDateComponents alloc] init];
+    
+    [calendar setTimeZone:zone];
+    
+    [comp setMinute:(minute+1)];
+    [comp setHour:hour];
+    [comp setDay:day];
+    [comp setMonth:month];
+    [comp setYear:year];
+    
+    date = [calendar dateFromComponents:comp];
+    
+    notif.fireDate = date;
+    notif.timeZone = zone;
+    notif.alertBody = @"Snooze alarm";
+    notif.alertAction = @"View";
+    notif.soundName = @"alarm.m4a";
+    notif.applicationIconBadgeNumber = -1;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateStyle:NSDateFormatterFullStyle];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"America/Sao_Paulo"]];
+    
+    NSLog(@"fireDate : %@", [formatter stringFromDate:notif.fireDate]);
+    Alarm* al = [[APP_MNG.dataAccess returnAlarms] objectAtIndex:index];
+    al.snooze = notif;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
