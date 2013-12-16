@@ -199,7 +199,7 @@
     
     if (!_editing)
     {
-        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
+        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
     }
     else

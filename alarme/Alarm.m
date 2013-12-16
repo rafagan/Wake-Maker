@@ -10,13 +10,14 @@
 
 @implementation Alarm
 
-+ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu AlarmMusicSystem:(bool)type
++ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu AlarmMusicSystem:(bool)type
 {
     Alarm* alarm = [[Alarm alloc] init];
     
     alarm.notifications = [[NSMutableArray alloc] init];
     alarm.days = [[NSMutableArray alloc] init];
     
+    alarm.myId = 0;
     alarm.alarmSystemTypeMusic = type;
     alarm.music = mu;
     alarm.qtdDays = [ds count];
@@ -65,6 +66,62 @@
     }
     
     return alarm;
+}
+
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(MPMediaItemCollection*)mu
+{
+    NSMutableArray* days = [Alarm daysMaskToDaysArray:ds];
+    return [Alarm createAlarmWithMinutes:mts Hour:h Description:msg Days:days Music:mu];
+}
+
++ (NSMutableArray*)daysMaskToDaysArray:(NSInteger)ds
+{
+    NSMutableArray* array = [NSMutableArray new];
+    
+    if(ds & 0b0000001)
+        [array addObject:@"1"];
+    if (ds & 0b0000010)
+        [array addObject:@"2"];
+    if (ds & 0b0000100)
+        [array addObject:@"3"];
+    if (ds & 0b0001000)
+        [array addObject:@"4"];
+    if (ds & 0b0010000)
+        [array addObject:@"5"];
+    if (ds & 0b0100000)
+        [array addObject:@"6"];
+    if (ds & 0b1000000)
+        [array addObject:@"7"];
+    
+    return array;
+}
+
++ (NSInteger)daysArrayToDaysMask:(NSMutableArray*)ds
+{
+    NSInteger d = 0;
+    
+    if ([ds containsObject:@"1"]) { //dom
+        d |= 0b0000001;
+    }
+    if ([ds containsObject:@"2"]) { //seg
+        d |= 0b0000010;
+    }
+    if ([ds containsObject:@"3"]) { //ter
+        d |= 0b0000100;
+    }
+    if ([ds containsObject:@"4"]) { //qua
+        d |= 0b0001000;
+    }
+    if ([ds containsObject:@"5"]) { //qui
+        d |= 0b0010000;
+    }
+    if ([ds containsObject:@"6"]) { //sex
+        d |= 0b0100000;
+    }
+    if ([ds containsObject:@"7"]) { //sab
+        d |= 0b1000000;
+    }
+    return d;
 }
 
 @end

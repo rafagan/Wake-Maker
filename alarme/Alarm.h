@@ -9,7 +9,11 @@
 
 @interface Alarm : NSObject
 
-+(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Message:(NSString*)msg Days:(NSMutableArray*)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg Days:(NSMutableArray*)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type;
+
++ (NSMutableArray*)daysMaskToDaysArray:(NSInteger)ds;
++ (NSInteger)daysArrayToDaysMask:(NSMutableArray*)ds;
 
 @property UILocalNotification* snooze;
 @property bool alarmSystemTypeMusic;
@@ -21,5 +25,6 @@
 @property NSString* alertBody;
 @property int minutes;
 @property int hour;
+@property int myId;
 
 @end
