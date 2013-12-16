@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="gameViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameViewController">
             <connections>
                 <outlet property="gameOverLabel" destination="JIW-e3-sV9" id="cwn-ws-YpW"/>
                 <outlet property="okBtOut" destination="6qL-MH-wmh" id="f1E-A2-jiB"/>

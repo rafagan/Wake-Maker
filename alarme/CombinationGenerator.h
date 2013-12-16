@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface combinationGenerator : NSObject
+@interface CombinationGenerator : NSObject
 {
     NSMutableArray* combination;
     NSArray* symbols;
 }
 
-+(combinationGenerator*)sharedGenerator;
++(CombinationGenerator*)sharedGenerator;
 
 -(NSArray*)generateCombinationWithQuantity:(int)i;
 -(NSArray*)returnSymbols;

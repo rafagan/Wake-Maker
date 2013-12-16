@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "gameViewController.h"
+#import "GameViewController.h"
 
 @implementation AppDelegate
 
@@ -28,7 +28,7 @@
 {
     NSLog(@"Received Notification");
 
-    gameViewController* gvc = [[gameViewController alloc] init];
+    GameViewController* gvc = [[GameViewController alloc] init];
     MainViewController* mvc = [[MainViewController alloc] init];
     [self.window setRootViewController:mvc];
     [mvc presentViewController:gvc animated:YES completion:nil];

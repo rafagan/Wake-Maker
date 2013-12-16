@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 André Traleski de Campos. All rights reserved.
 //
 
-#import "combinationGenerator.h"
+#import "CombinationGenerator.h"
 #import "symbol.h"
 
-@implementation combinationGenerator
+@implementation CombinationGenerator
 
-+(combinationGenerator *)sharedGenerator;
++(CombinationGenerator *)sharedGenerator;
 {
-    static combinationGenerator* sharedGenerator = nil;
+    static CombinationGenerator* sharedGenerator = nil;
     if(!sharedGenerator)
         sharedGenerator = [[super alloc] init];
     

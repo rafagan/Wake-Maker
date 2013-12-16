@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ApplicationManager.h"
 
-@interface addViewController : UIViewController <UITextFieldDelegate, MPMediaPickerControllerDelegate>
+@interface AddViewController : UIViewController <UITextFieldDelegate, MPMediaPickerControllerDelegate>
 {
     int minutes, hour;
     MPMediaItemCollection* selectedMusic;

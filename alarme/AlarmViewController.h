@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplicationManager.h"
-#import "addViewController.h"
+#import "AddViewController.h"
 #import "CustomCell.h"
 
 @interface AlarmViewController : UITableViewController

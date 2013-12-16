@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface gameViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface GameViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     int points;
     float volume;

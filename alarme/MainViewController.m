@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "Alarm.h"
-#import "gameViewController.h"
+#import "GameViewController.h"
 
 @interface MainViewController ()
 

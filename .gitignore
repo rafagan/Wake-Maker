@@ -1,0 +1,7 @@
+*.pboxproj
+*.xcworkspacedata
+*.xcuserstate
+*.xcscheme
+xcschememanagement.plist
+project.pbxproj
+alarme.xcodeproj

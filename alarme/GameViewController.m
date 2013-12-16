@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 André Traleski de Campos. All rights reserved.
 //
 
-#import "gameViewController.h"
+#import "GameViewController.h"
 #import "ApplicationManager.h"
-#import "combinationGenerator.h"
+#import "CombinationGenerator.h"
 #import "symbol.h"
 
-@interface gameViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation gameViewController
+@implementation GameViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -113,14 +113,14 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    symbol* s = [[[combinationGenerator sharedGenerator] returnSymbols] objectAtIndex:row];
+    symbol* s = [[[CombinationGenerator sharedGenerator] returnSymbols] objectAtIndex:row];
     UIImageView* imgV = [[UIImageView alloc] initWithImage:s.img];
     return imgV;
 }
 
 - (IBAction)okBt:(id)sender
 {
-    NSArray* verify = [[combinationGenerator sharedGenerator] returnGeneratedCombination];
+    NSArray* verify = [[CombinationGenerator sharedGenerator] returnGeneratedCombination];
     if([[verify objectAtIndex:0] index] == [[self picker] selectedRowInComponent:0] && [[verify objectAtIndex:1] index] == [[self picker] selectedRowInComponent:1] && [[verify objectAtIndex:2] index] == [[self picker] selectedRowInComponent:2] && [[verify objectAtIndex:3] index] == [[self picker] selectedRowInComponent:3])
     {
         points ++;
@@ -155,7 +155,7 @@
 
 - (void)showComb
 {
-    NSArray* rando = [[combinationGenerator sharedGenerator] generateCombinationWithQuantity:4];
+    NSArray* rando = [[CombinationGenerator sharedGenerator] generateCombinationWithQuantity:4];
     int i = 1;
     int x = 60;
     int offset = 20;

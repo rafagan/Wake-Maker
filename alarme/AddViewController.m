@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 André Traleski de Campos. All rights reserved.
 //
 
-#import "addViewController.h"
+#import "AddViewController.h"
 
-@interface addViewController ()
+@interface AddViewController ()
 
 @end
 
-@implementation addViewController
+@implementation AddViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

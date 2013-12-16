@@ -92,7 +92,7 @@
 
 - (IBAction)addBtAc:(id)sender
 {
-    addViewController* addvc = [[addViewController alloc] init];
+    AddViewController* addvc = [[AddViewController alloc] init];
     [self presentViewController:addvc animated:YES completion:nil];
 }
 
@@ -156,7 +156,7 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    addViewController* addvc = [[addViewController alloc] init];
+    AddViewController* addvc = [[AddViewController alloc] init];
     addvc.editing = YES;
     addvc.row = [indexPath row];
     

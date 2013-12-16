@@ -10,10 +10,10 @@
 		CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40DB7C185A2342005F5D1C /* CustomCell.m */; };
 		CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB81185A33F9005F5D1C /* CustomCell.xib */; };
 		CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB83185A4463005F5D1C /* alarm30.mp3 */; };
-		CD495409185A7ACE0028617E /* gameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495408185A7ACE0028617E /* gameViewController.m */; };
-		CD49540B185A7AD90028617E /* gameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD49540A185A7AD90028617E /* gameViewController.xib */; };
+		CD495409185A7ACE0028617E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495408185A7ACE0028617E /* GameViewController.m */; };
+		CD49540B185A7AD90028617E /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD49540A185A7AD90028617E /* GameViewController.xib */; };
 		CD49540E185A7AF30028617E /* symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = CD49540D185A7AF30028617E /* symbol.m */; };
-		CD495411185A7AFF0028617E /* combinationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495410185A7AFF0028617E /* combinationGenerator.m */; };
+		CD495411185A7AFF0028617E /* CombinationGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CD495410185A7AFF0028617E /* CombinationGenerator.m */; };
 		CD495417185A7B1C0028617E /* symbol1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495413185A7B1C0028617E /* symbol1.jpg */; };
 		CD495418185A7B1C0028617E /* symbol2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495414185A7B1C0028617E /* symbol2.jpg */; };
 		CD495419185A7B1C0028617E /* symbol3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495415185A7B1C0028617E /* symbol3.jpg */; };
@@ -42,8 +42,8 @@
 		CDDD7887185792E800A27585 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD7886185792E800A27585 /* Alarm.m */; };
 		CDDD788A1857938B00A27585 /* DataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDD78891857938B00A27585 /* DataAccess.m */; };
 		CDF4CF931857AA7D00643587 /* DataSourceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CF921857AA7D00643587 /* DataSourceFactory.m */; };
-		CDF4CF971857E85100643587 /* addViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CF951857E85100643587 /* addViewController.m */; };
-		CDF4CF981857E85100643587 /* addViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF4CF961857E85100643587 /* addViewController.xib */; };
+		CDF4CF971857E85100643587 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF4CF951857E85100643587 /* AddViewController.m */; };
+		CDF4CF981857E85100643587 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF4CF961857E85100643587 /* AddViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,13 +61,13 @@
 		CD40DB7C185A2342005F5D1C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		CD40DB81185A33F9005F5D1C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		CD40DB83185A4463005F5D1C /* alarm30.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm30.mp3; sourceTree = "<group>"; };
-		CD495407185A7ACE0028617E /* gameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameViewController.h; sourceTree = "<group>"; };
-		CD495408185A7ACE0028617E /* gameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameViewController.m; sourceTree = "<group>"; };
-		CD49540A185A7AD90028617E /* gameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gameViewController.xib; sourceTree = "<group>"; };
+		CD495407185A7ACE0028617E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		CD495408185A7ACE0028617E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		CD49540A185A7AD90028617E /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		CD49540C185A7AF30028617E /* symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = symbol.h; sourceTree = "<group>"; };
 		CD49540D185A7AF30028617E /* symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = symbol.m; sourceTree = "<group>"; };
-		CD49540F185A7AFF0028617E /* combinationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = combinationGenerator.h; sourceTree = "<group>"; };
-		CD495410185A7AFF0028617E /* combinationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = combinationGenerator.m; sourceTree = "<group>"; };
+		CD49540F185A7AFF0028617E /* CombinationGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinationGenerator.h; sourceTree = "<group>"; };
+		CD495410185A7AFF0028617E /* CombinationGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinationGenerator.m; sourceTree = "<group>"; };
 		CD495413185A7B1C0028617E /* symbol1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol1.jpg; sourceTree = "<group>"; };
 		CD495414185A7B1C0028617E /* symbol2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol2.jpg; sourceTree = "<group>"; };
 		CD495415185A7B1C0028617E /* symbol3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol3.jpg; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 		CDF4CF8E1857AA6100643587 /* IDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDataSource.h; sourceTree = "<group>"; };
 		CDF4CF911857AA7D00643587 /* DataSourceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceFactory.h; sourceTree = "<group>"; };
 		CDF4CF921857AA7D00643587 /* DataSourceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceFactory.m; sourceTree = "<group>"; };
-		CDF4CF941857E85100643587 /* addViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addViewController.h; sourceTree = "<group>"; };
-		CDF4CF951857E85100643587 /* addViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addViewController.m; sourceTree = "<group>"; };
-		CDF4CF961857E85100643587 /* addViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addViewController.xib; sourceTree = "<group>"; };
+		CDF4CF941857E85100643587 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		CDF4CF951857E85100643587 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		CDF4CF961857E85100643587 /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +239,8 @@
 		CDDD787F185791DF00A27585 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CD49540A185A7AD90028617E /* gameViewController.xib */,
-				CDF4CF961857E85100643587 /* addViewController.xib */,
+				CD49540A185A7AD90028617E /* GameViewController.xib */,
+				CDF4CF961857E85100643587 /* AddViewController.xib */,
 				CDDD78741857916B00A27585 /* MainViewController.xib */,
 				CDDD787C185791D800A27585 /* AlarmViewController.xib */,
 				CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */,
@@ -252,14 +252,14 @@
 		CDDD7880185791EA00A27585 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD495407185A7ACE0028617E /* gameViewController.h */,
-				CD495408185A7ACE0028617E /* gameViewController.m */,
+				CD495407185A7ACE0028617E /* GameViewController.h */,
+				CD495408185A7ACE0028617E /* GameViewController.m */,
 				CDDD78721857916B00A27585 /* MainViewController.h */,
 				CDDD78731857916B00A27585 /* MainViewController.m */,
 				CDDD787A185791D800A27585 /* AlarmViewController.h */,
 				CDDD787B185791D800A27585 /* AlarmViewController.m */,
-				CDF4CF941857E85100643587 /* addViewController.h */,
-				CDF4CF951857E85100643587 /* addViewController.m */,
+				CDF4CF941857E85100643587 /* AddViewController.h */,
+				CDF4CF951857E85100643587 /* AddViewController.m */,
 				CD40DB7B185A2342005F5D1C /* CustomCell.h */,
 				CD40DB7C185A2342005F5D1C /* CustomCell.m */,
 			);
@@ -269,8 +269,8 @@
 		CDDD78811857922100A27585 /* Information */ = {
 			isa = PBXGroup;
 			children = (
-				CD49540F185A7AFF0028617E /* combinationGenerator.h */,
-				CD495410185A7AFF0028617E /* combinationGenerator.m */,
+				CD49540F185A7AFF0028617E /* CombinationGenerator.h */,
+				CD495410185A7AFF0028617E /* CombinationGenerator.m */,
 				CDDD78821857925600A27585 /* ApplicationManager.h */,
 				CDDD78831857925600A27585 /* ApplicationManager.m */,
 				CDF4CF8E1857AA6100643587 /* IDataSource.h */,
@@ -372,10 +372,10 @@
 				CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */,
 				CD495418185A7B1C0028617E /* symbol2.jpg in Resources */,
 				CDC1E0F618579D1B00F2D6A6 /* HeaderView.xib in Resources */,
-				CD49540B185A7AD90028617E /* gameViewController.xib in Resources */,
+				CD49540B185A7AD90028617E /* GameViewController.xib in Resources */,
 				CD495417185A7B1C0028617E /* symbol1.jpg in Resources */,
 				CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */,
-				CDF4CF981857E85100643587 /* addViewController.xib in Resources */,
+				CDF4CF981857E85100643587 /* AddViewController.xib in Resources */,
 				CDDD784E1857912300A27585 /* InfoPlist.strings in Resources */,
 				CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */,
 				CD49541A185A7B1C0028617E /* symbol4.jpg in Resources */,
@@ -408,10 +408,10 @@
 				CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */,
 				CDDD78841857925600A27585 /* ApplicationManager.m in Sources */,
 				CDDD78541857912300A27585 /* AppDelegate.m in Sources */,
-				CDF4CF971857E85100643587 /* addViewController.m in Sources */,
+				CDF4CF971857E85100643587 /* AddViewController.m in Sources */,
 				CDDD78751857916B00A27585 /* MainViewController.m in Sources */,
-				CD495409185A7ACE0028617E /* gameViewController.m in Sources */,
-				CD495411185A7AFF0028617E /* combinationGenerator.m in Sources */,
+				CD495409185A7ACE0028617E /* GameViewController.m in Sources */,
+				CD495411185A7AFF0028617E /* CombinationGenerator.m in Sources */,
 				CDDD78501857912300A27585 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
