@@ -15,6 +15,7 @@
 + (NSMutableArray*)daysMaskToDaysArray:(NSInteger)ds;
 + (NSInteger)daysArrayToDaysMask:(NSMutableArray*)ds;
 
+@property UILocalNotification* snooze;
 @property bool alarmSystemTypeMusic;
 @property MPMediaItemCollection* music;
 @property NSMutableArray* notifications;

@@ -10,10 +10,12 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "MainViewController.h"
 
 @interface GameViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     int points;
+    int index;
     float volume;
     bool typeIsMusic;
     MPMusicPlayerController* appAlarmPlayer;
@@ -23,6 +25,7 @@
 - (void)showComb;
 - (IBAction)skipBt:(id)sender;
 - (void)hideComb;
+- (IBAction)snoozeBtAc:(id)sender;
 @property (strong, nonatomic) AVAudioPlayer* audioPlayer;
 @property (weak, nonatomic) IBOutlet UIButton *startBtOut;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
@@ -30,5 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *skipBtOut;
 @property (weak, nonatomic) IBOutlet UIButton *okBtOut;
 @property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
+@property (weak, nonatomic) IBOutlet UIButton *snoozeBtOut;
 
 @end
