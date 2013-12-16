@@ -205,7 +205,7 @@
     else
     {
         [APP_MNG.dataAccess removeAlarm:[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]];
-        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic] atIndex:_row];
+        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic] atIndex:_row];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

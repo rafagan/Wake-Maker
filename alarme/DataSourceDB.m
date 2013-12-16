@@ -85,7 +85,7 @@
                 int minute = sqlite3_column_int(statement, 3);
                 NSInteger days = sqlite3_column_int(statement, 4);
                 
-                Alarm* a = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil];
+                Alarm* a = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil AlarmMusicSystem:NO];
                 a.myId = myId;
                 [alarms addObject:a];
             }
@@ -116,7 +116,7 @@
                 int minute = sqlite3_column_int(statement, 3);
                 NSInteger days = sqlite3_column_int(statement, 4);
                 
-                alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil];
+                alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil AlarmMusicSystem:NO];
                 alarm.myId = myId;
             }
             sqlite3_finalize(statement);
