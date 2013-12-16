@@ -199,21 +199,13 @@
     
     if (!_editing)
     {
-<<<<<<< HEAD
-        _alarm = [Alarm createAlarmWithMinutes:minutes Hour:hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
-=======
-        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic];
->>>>>>> 942482921f9a6d0f33be27d39fd478ac1abfd5c5
+        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
     }
     else
     {
         [APP_MNG.dataAccess removeAlarm:[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]];
-<<<<<<< HEAD
-        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:minutes Hour:hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic] atIndex:_row];
-=======
-        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic] atIndex:_row];
->>>>>>> 942482921f9a6d0f33be27d39fd478ac1abfd5c5
+        [[APP_MNG.dataAccess returnAlarms] insertObject:[Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Message:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic] atIndex:_row];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

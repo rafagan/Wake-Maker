@@ -47,12 +47,8 @@
         NSInteger alarmDateHour = [components hour];
         if (alarmDateHour < (hour+1))
         {
-<<<<<<< HEAD
             index = i;
             typeIsMusic = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] alarmSystemTypeMusic];
-=======
-            [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] music]];
->>>>>>> 942482921f9a6d0f33be27d39fd478ac1abfd5c5
             break;
         }
     }

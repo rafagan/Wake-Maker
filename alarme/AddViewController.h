@@ -11,12 +11,8 @@
 
 @interface AddViewController : UIViewController <UITextFieldDelegate, MPMediaPickerControllerDelegate>
 {
-<<<<<<< HEAD
-    int minutes, hour;
     bool isMusic;
-=======
     NSUInteger minutes, hour;
->>>>>>> 942482921f9a6d0f33be27d39fd478ac1abfd5c5
     MPMediaItemCollection* selectedMusic;
 }
 
