@@ -10,7 +10,7 @@
 
 @implementation Alarm
 
-+ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString *)msg Days:(NSMutableArray *)ds Music:(MPMediaItemCollection *)mu AlarmMusicSystem:(bool)type
++ (Alarm *)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString *)msg Days:(NSMutableArray *)ds Music:(Song *)mu AlarmMusicSystem:(bool)type
 {
     Alarm* alarm = [[Alarm alloc] init];
     
@@ -68,7 +68,7 @@
     return alarm;
 }
 
-+(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(Song*)mu AlarmMusicSystem:(bool)type
 {
     NSMutableArray* days = [Alarm daysMaskToDaysArray:ds];
     return [Alarm createAlarmWithMinutes:mts Hour:h Description:msg Days:days Music:mu AlarmMusicSystem:type];

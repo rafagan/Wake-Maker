@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplicationManager.h"
+#import "Song.h"
 
 @interface AddViewController : UIViewController <UITextFieldDelegate, MPMediaPickerControllerDelegate>
 {
     bool isMusic;
     NSUInteger minutes, hour;
-    MPMediaItemCollection* selectedMusic;
+    Song* selectedMusic;
 }
 
 @property NSMutableArray* specificDays;

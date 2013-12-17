@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2611AA13185F9CC100C241E8 /* DataSourceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AA12185F9CC100C241E8 /* DataSourceDB.m */; };
 		2611AA15185FBC0800C241E8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2611AA14185FBC0800C241E8 /* libsqlite3.dylib */; };
+		268B4D97185FF2F100821823 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B4D96185FF2F100821823 /* Song.m */; };
 		CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CD40DB7C185A2342005F5D1C /* CustomCell.m */; };
 		CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB81185A33F9005F5D1C /* CustomCell.xib */; };
 		CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD40DB83185A4463005F5D1C /* alarm30.mp3 */; };
@@ -68,6 +69,8 @@
 		2611AA11185F9CC100C241E8 /* DataSourceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceDB.h; sourceTree = "<group>"; };
 		2611AA12185F9CC100C241E8 /* DataSourceDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceDB.m; sourceTree = "<group>"; };
 		2611AA14185FBC0800C241E8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		268B4D95185FF2F100821823 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		268B4D96185FF2F100821823 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		CD40DB7B185A2342005F5D1C /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		CD40DB7C185A2342005F5D1C /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		CD40DB81185A33F9005F5D1C /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				CDDD7886185792E800A27585 /* Alarm.m */,
 				CDAAB810185FFDF80011E328 /* Achievement.h */,
 				CDAAB811185FFDF80011E328 /* Achievement.m */,
+				268B4D95185FF2F100821823 /* Song.h */,
+				268B4D96185FF2F100821823 /* Song.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268B4D97185FF2F100821823 /* Song.m in Sources */,
 				CDDD787D185791D800A27585 /* AlarmViewController.m in Sources */,
 				CDAAB812185FFDF80011E328 /* Achievement.m in Sources */,
 				CD49540E185A7AF30028617E /* Symbol.m in Sources */,

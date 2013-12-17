@@ -18,7 +18,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        selectedMusic = nil;
         _editing = false;
         _specificDays = [[NSMutableArray alloc] init];
         // Custom initialization
@@ -235,7 +234,17 @@
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    selectedMusic = mediaItemCollection;
+    
+    MPMediaItem* music = [[mediaItemCollection items]objectAtIndex:0];
+    
+    selectedMusic = [Song new];
+    selectedMusic.item = mediaItemCollection;
+    selectedMusic.music = music;
+    [selectedMusic reset];
+    
+    [selectedMusic playMusic];
+    
+    [self.musicButton setTitle:selectedMusic.name forState:UIControlStateNormal];
 }
 - (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
 {
