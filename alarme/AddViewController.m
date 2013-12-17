@@ -235,8 +235,19 @@
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    selectedMusic = mediaItemCollection;
-    [_musicButton setTitle:@"XD" forState:UIControlStateNormal];
+    
+    MPMediaItem* music = [[mediaItemCollection items]objectAtIndex:0];
+    
+    selectedMusic.item = mediaItemCollection;
+    selectedMusic.music = music;
+    [selectedMusic reset];
+//    [selectedMusic playMusic];
+    
+    MPMusicPlayerController* appMusicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    [appMusicPlayer setQueueWithItemCollection:selectedMusic.item];
+    [appMusicPlayer play];
+    
+    [self.musicButton setTitle:selectedMusic.name forState:UIControlStateNormal];
 }
 - (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
 {
