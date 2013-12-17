@@ -242,7 +242,9 @@
     selectedMusic.music = music;
     [selectedMusic reset];
     
-    [selectedMusic playMusic];
+    [self test];
+    
+//    [selectedMusic playMusic];
     
     [self.musicButton setTitle:selectedMusic.name forState:UIControlStateNormal];
 }
@@ -250,6 +252,51 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+-(MPMediaItem*) getRandomTrack
+{
+	MPMediaQuery *everything = [[MPMediaQuery alloc] init];
+	// Get all Media Items into an Array (Fast)
+	NSArray *allTracks = [everything items];
+	// Check we have enough Tracks for a Random Choice
+	if ([allTracks count] < 2)
+	{
+		return nil;
+	}
+	// Pick Random Track
+	int trackNumber = arc4random() % [allTracks count];
+	MPMediaItem *item = [allTracks objectAtIndex:trackNumber];
+    
+    MPMediaItemCollection * c = [[MPMediaItemCollection alloc] initWithItems:[NSArray arrayWithObject:item]];
+    MPMusicPlayerController* appMusicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    [appMusicPlayer setQueueWithItemCollection:c];
+    [appMusicPlayer play];
+    
+	return item;
+}
+
+- (void)test {
+    MPMediaPropertyPredicate *songPredicate =
+    [MPMediaPropertyPredicate predicateWithValue:@"Down In A hole"
+                                     forProperty:MPMediaItemPropertyTitle
+                                  comparisonType:MPMediaPredicateComparisonContains];
+    
+    MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
+    [songsQuery addFilterPredicate:songPredicate];
+    
+    NSLog(@"%@", [songsQuery items]);
+    
+    
+    MPMediaItem *item = [[songsQuery items] objectAtIndex:0];
+    
+    MPMediaItemCollection * c = [[MPMediaItemCollection alloc] initWithItems:[NSArray arrayWithObject:item]];
+    MPMusicPlayerController* appMusicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    [appMusicPlayer setQueueWithItemCollection:c];
+    [appMusicPlayer play];
+    
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
