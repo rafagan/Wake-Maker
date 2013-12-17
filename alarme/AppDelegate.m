@@ -31,7 +31,7 @@
     GameViewController* gvc = [[GameViewController alloc] init];
     MainViewController* mvc = [[MainViewController alloc] init];
     [self.window setRootViewController:mvc];
-    [mvc presentViewController:gvc animated:YES completion:nil];
+    [mvc presentViewController:gvc animated:NO completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
