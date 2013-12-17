@@ -21,6 +21,7 @@
 @property bool editing;
 @property int row;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (weak, nonatomic) IBOutlet UIButton *musicButton;
 
 - (IBAction)selectSong:(id)sender;
 - (IBAction)sundayChanged:(id)sender;
