@@ -15,8 +15,8 @@
 @interface GameViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     int points;
-    int index;
     float volume;
+    Alarm* alarm;
     bool typeIsMusic;
     bool canGetAchievement;
     MPMusicPlayerController* appAlarmPlayer;

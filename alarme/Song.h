@@ -8,13 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface Song : NSObject
 
-@property (nonatomic,strong) MPMediaItemCollection* item;
-@property (nonatomic,strong) MPMediaItem* music;
-@property (nonatomic) NSInteger volume;
+@property (nonatomic,strong) MPMediaItemCollection* collectionItem;
+@property (nonatomic,strong) MPMediaItem* item;
+@property (nonatomic,setter = setVolume:) NSInteger volume;
 @property (nonatomic,strong) NSString* name;
+@property (nonatomic) BOOL canVibrate;
+@property (nonatomic) SystemSoundID nativeSound;
+@property (nonatomic) BOOL isNative;
+
++ (Song*)createSongWithName:(NSString*)name;
 
 - (void)playMusic;
 - (void)reset;

@@ -11,14 +11,13 @@
 
 @interface Alarm : NSObject
 
-+(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg Days:(NSMutableArray*)ds Music:(Song*)mu AlarmMusicSystem:(bool)type;
-+(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(Song*)mu AlarmMusicSystem:(bool)type;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg Days:(NSMutableArray*)ds Music:(Song*)mu;
++(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(Song*)mu;
 
 + (NSMutableArray*)daysMaskToDaysArray:(NSInteger)ds;
 + (NSInteger)daysArrayToDaysMask:(NSMutableArray*)ds;
 
 @property UILocalNotification* snooze;
-@property bool alarmSystemTypeMusic;
 @property NSMutableArray* notifications;
 @property NSMutableArray* days;
 @property int qtdDays;

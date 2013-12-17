@@ -10,6 +10,7 @@
 #import "ApplicationManager.h"
 #import "CombinationGenerator.h"
 #import "Symbol.h"
+#import "Alarm.h"
 
 @interface GameViewController ()
 
@@ -38,8 +39,6 @@
     NSInteger hour = [components hour];
     
     typeIsMusic = false;
-    index = 0;
-    
     for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count]; i++)
     {
         NSDate* alarmDate = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] date];
@@ -48,15 +47,15 @@
         NSInteger alarmDateHour = [components hour];
         if (alarmDateHour < (hour+1))
         {
-            index = i;
-            typeIsMusic = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] alarmSystemTypeMusic];
+            alarm = [[APP_MNG.dataAccess returnAlarms] objectAtIndex:i];
+            typeIsMusic = alarm.music.isNative;
             break;
         }
     }
     
-    if (typeIsMusic)
+    if (!typeIsMusic)
     {
-        [appAlarmPlayer setQueueWithItemCollection:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:index] music]];
+        [appAlarmPlayer setQueueWithItemCollection:alarm.music.collectionItem];
         [appAlarmPlayer setShuffleMode: MPMusicShuffleModeOff];
         [appAlarmPlayer setRepeatMode: MPMusicRepeatModeOne];
         [appAlarmPlayer play];
@@ -278,8 +277,7 @@
     [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"America/Sao_Paulo"]];
     
     NSLog(@"fireDate : %@", [formatter stringFromDate:notif.fireDate]);
-    Alarm* al = [[APP_MNG.dataAccess returnAlarms] objectAtIndex:index];
-    al.snooze = notif;
+    alarm.snooze = notif;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notif];
     

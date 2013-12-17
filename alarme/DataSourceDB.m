@@ -60,7 +60,7 @@
     
 //    sqlite3_exec(_systemDatabase, "DROP TABLE alarm", NULL, NULL, &errMsg);
     const char *sql_stmt =
-        "CREATE TABLE IF NOT EXISTS alarm (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT NOT NULL, hour INTEGER NOT NULL, minute INTEGER NOT NULL, days INTEGER NOT NULL)";
+        "CREATE TABLE IF NOT EXISTS alarm (id INTEGER PRIMARY KEY AUTOINCREMENT, description TEXT NOT NULL, hour INTEGER NOT NULL, minute INTEGER NOT NULL, days INTEGER NOT NULL, music TEXT, isNativeMusic BOOLEAN, nativeNumber INTEGER, canVibrate BOOLEAN)";
     if (sqlite3_exec(_systemDatabase, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
         NSLog(@"Falha ao criar as tabelas do banco");
     else
@@ -84,8 +84,17 @@
                 int hour = sqlite3_column_int(statement, 2);
                 int minute = sqlite3_column_int(statement, 3);
                 NSInteger days = sqlite3_column_int(statement, 4);
+                NSString *musicName = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 5)];
+                BOOL isNativeMusic = sqlite3_column_int(statement, 6);
+                NSInteger nativeNumber = sqlite3_column_int(statement, 7);
+                BOOL canVibrate = sqlite3_column_int(statement, 8);
                 
-                Alarm* a = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil AlarmMusicSystem:false];
+                Song* song = [Song createSongWithName:musicName];
+                song.canVibrate = canVibrate;
+                song.nativeSound = nativeNumber;
+                song.isNative = isNativeMusic;
+                
+                Alarm* a = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:song];
                 a.myId = myId;
                 [alarms addObject:a];
             }
@@ -115,8 +124,17 @@
                 int hour = sqlite3_column_int(statement, 2);
                 int minute = sqlite3_column_int(statement, 3);
                 NSInteger days = sqlite3_column_int(statement, 4);
-
-                alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil AlarmMusicSystem:false];
+                NSString *musicName = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 5)];
+                BOOL isNativeMusic = sqlite3_column_int(statement, 6);
+                NSInteger nativeNumber = sqlite3_column_int(statement, 7);
+                BOOL canVibrate = sqlite3_column_int(statement, 8);
+                
+                Song* song = [Song createSongWithName:musicName];
+                song.canVibrate = canVibrate;
+                song.nativeSound = nativeNumber;
+                song.isNative = isNativeMusic;
+                
+                alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:song];
                 alarm.myId = myId;
             }
             sqlite3_finalize(statement);
@@ -132,8 +150,7 @@
     BOOL state;
     
     if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
-        NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO alarm (description, hour, minute, days) VALUES (\"%s\", \"%d\", \"%d\", \"%ld\")",
-                               [alarm.alertBody UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days]];
+        NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO alarm (description, hour, minute, days, music, isNativeMusic, nativeNumber, canVibrate) VALUES (\"%s\", \"%d\", \"%d\", \"%ld\", \"%s\", \"%d\", \"%d\", \"%d\")", [alarm.alertBody UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days], [alarm.music.name UTF8String], alarm.music.isNative, alarm.music.nativeSound, alarm.music.canVibrate];
         const char *insert_stmt = [insertSQL UTF8String];
         if (sqlite3_exec(_systemDatabase, insert_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             state = NO;
@@ -178,8 +195,7 @@
     BOOL state;
     
     if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
-        NSString *updateSQL = [NSString stringWithFormat:@"UPDATE alarm SET description = \"%s\", hour = \"%d\", minute = \"%d\", days = \"%ld\" WHERE id = \"%d\"",
-                               [alarm.description UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days], alarm.myId];
+        NSString *updateSQL = [NSString stringWithFormat:@"UPDATE alarm SET description = \"%s\", hour = \"%d\", minute = \"%d\", days = \"%ld\", music = \"%s\", isNativeMusic = \"%d\", nativeNumber = \"%d\", canVibrate = \"%d\", WHERE id = \"%d\"", [alarm.description UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days], [alarm.music.name UTF8String], alarm.music.isNative, alarm.music.nativeSound, alarm.music.canVibrate, alarm.myId];
         const char *update_stmt = [updateSQL UTF8String];
         if (sqlite3_exec(_systemDatabase, update_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             state = NO;
