@@ -71,7 +71,6 @@
 +(Alarm*)createAlarmWithMinutes:(int)mts Hour:(int)h Description:(NSString*)msg DaysMask:(NSInteger)ds Music:(MPMediaItemCollection*)mu AlarmMusicSystem:(bool)type
 {
     NSMutableArray* days = [Alarm daysMaskToDaysArray:ds];
-
     return [Alarm createAlarmWithMinutes:mts Hour:h Description:msg Days:days Music:mu AlarmMusicSystem:type];
 }
 

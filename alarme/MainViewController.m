@@ -31,44 +31,6 @@
     return self;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    NSDate* now = [[NSDate alloc] init];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:(NSMinuteCalendarUnit | NSHourCalendarUnit) fromDate:now];
-    NSInteger hour = [components hour];
-    NSInteger minute = [components minute];
-    
-    for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count]; i++)
-    {
-        NSDate* alarmDate = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] date];
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *components = [calendar components:(NSMinuteCalendarUnit | NSHourCalendarUnit) fromDate:alarmDate];
-        NSInteger alarmDateMinute = [components minute];
-        NSInteger alarmDateHour = [components hour];
-        if (alarmDateHour == hour && alarmDateMinute <= minute && [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] snooze] == nil)
-        {
-            GameViewController* gvc = [[GameViewController alloc] init];
-            [self presentViewController:gvc animated:YES completion:nil];
-            break;
-        }
-        else if ([[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] snooze] != nil)
-        {
-            UILocalNotification* notification = [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] snooze];
-            NSDateComponents *components = [calendar components:(NSMinuteCalendarUnit | NSHourCalendarUnit) fromDate:notification.fireDate];
-            NSInteger alarmDateMinute = [components minute];
-            NSInteger alarmDateHour = [components hour];
-            if (alarmDateHour == hour && alarmDateMinute <= minute)
-            {
-                GameViewController* gvc = [[GameViewController alloc] init];
-                [self presentViewController:gvc animated:YES completion:nil];
-                break;
-            }
-            
-        }
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
