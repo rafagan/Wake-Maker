@@ -20,13 +20,16 @@
     if (self) {
         selectedMusic = nil;
         _editing = false;
-        _specificDays = [[NSMutableArray alloc] init];
-        for(int i = 0; i < 7; i++)
+        if(!_editing)
         {
-            int j = i + 1;
-            UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
-            [self.view addGestureRecognizer:tap];
-            [[self specificDays] addObject:[NSString stringWithFormat:@"%d",j]];
+            _specificDays = [[NSMutableArray alloc] init];
+            for(int i = 0; i < 7; i++)
+            {
+                int j = i + 1;
+                UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+                [self.view addGestureRecognizer:tap];
+                [[self specificDays] addObject:[NSString stringWithFormat:@"%d",j]];
+            }
         }
         // Custom initialization
     }
@@ -37,6 +40,7 @@
 {
     if (_editing)
     {
+        [[self textField] setText:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row] alertBody]];
         _alarm = [[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row];
         selectedMusic = _alarm.music;
         
@@ -55,30 +59,37 @@
             switch (j) {
                 case 1:
                     [[self sundayOut] setOn:YES];
+                    [_specificDays addObject:@"1"];
                     break;
                 
                 case 2:
                     [[self mondayOut] setOn:YES];
+                    [_specificDays addObject:@"2"];
                     break;
                     
                 case 3:
                     [[self tuesdayOut] setOn:YES];
+                    [_specificDays addObject:@"3"];
                     break;
                     
                 case 4:
                     [[self wednesdayOut] setOn:YES];
+                    [_specificDays addObject:@"4"];
                     break;
                     
                 case 5:
                     [[self thursdayOut] setOn:YES];
+                    [_specificDays addObject:@"5"];
                     break;
                     
                 case 6:
                     [[self fridayOut] setOn:YES];
+                    [_specificDays addObject:@"6"];
                     break;
                     
                 case 7:
                     [[self saturdayOut] setOn:YES];
+                    [_specificDays addObject:@"7"];
                     break;
                     
                 default:
