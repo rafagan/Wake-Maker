@@ -28,7 +28,6 @@
 - (IBAction)snoozeBtAc:(id)sender;
 @property (strong, nonatomic) AVAudioPlayer* audioPlayer;
 @property (weak, nonatomic) IBOutlet UIButton *startBtOut;
-@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 @property (weak, nonatomic) IBOutlet UIButton *skipBtOut;
 @property (weak, nonatomic) IBOutlet UIButton *okBtOut;

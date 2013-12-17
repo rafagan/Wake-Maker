@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
                 <outlet property="alarmsBtOut" destination="TCW-Cv-6tI" id="tDS-5v-IHl"/>
+                <outlet property="cancelSnoozeBtOut" destination="c5p-Uk-QB1" id="oXU-Fn-rqL"/>
                 <outlet property="clockLabel" destination="xwk-w9-xSX" id="e4a-pN-aS4"/>
                 <outlet property="nightBtOut" destination="Mlz-Jg-nKn" id="hCD-Gc-uor"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -46,7 +47,7 @@
                         <action selector="nightBtAc:" destination="-1" eventType="touchUpInside" id="UbW-iC-daM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-Uk-QB1">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5p-Uk-QB1">
                     <rect key="frame" x="14" y="524" width="110" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Cancel Snooze">

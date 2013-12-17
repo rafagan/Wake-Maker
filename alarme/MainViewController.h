@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 @property (weak, nonatomic) IBOutlet UIButton *alarmsBtOut;
 @property (weak, nonatomic) IBOutlet UIButton *nightBtOut;
+@property (weak, nonatomic) IBOutlet UIButton *cancelSnoozeBtOut;
 
 - (IBAction)alarmsBtAc:(id)sender;
 - (IBAction)nightBtAc:(id)sender;
