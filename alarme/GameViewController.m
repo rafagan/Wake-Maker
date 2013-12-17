@@ -133,7 +133,6 @@
     if([[verify objectAtIndex:0] index] == [[self picker] selectedRowInComponent:0] && [[verify objectAtIndex:1] index] == [[self picker] selectedRowInComponent:1] && [[verify objectAtIndex:2] index] == [[self picker] selectedRowInComponent:2] && [[verify objectAtIndex:3] index] == [[self picker] selectedRowInComponent:3])
     {
         points ++;
-        [[self pointsLabel] setText:[NSString stringWithFormat:@"%d",points]];
         
         if (points == 1)
         {
@@ -141,6 +140,13 @@
                 [appAlarmPlayer stop];
             else
                 [_audioPlayer stop];
+            
+            for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count];i++)
+            {
+                if ([[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] snooze] != nil)
+                    [[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i]   setSnooze:nil];
+            }
+            
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         else
@@ -202,8 +208,9 @@
 
 - (IBAction)skipBt:(id)sender
 {
-    volume+=0.5;
+    volume+=0.1;
     [_audioPlayer setVolume:volume];
+    appAlarmPlayer.volume = volume;
     [NSTimer cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideComb) object:nil];
     [self hideComb];
     [self showComb];

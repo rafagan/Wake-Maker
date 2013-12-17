@@ -236,7 +236,6 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     selectedMusic = mediaItemCollection;
-    [_musicButton setTitle:@"XD" forState:UIControlStateNormal];
 }
 - (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker
 {

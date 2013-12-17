@@ -31,6 +31,23 @@
     return self;
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    for (int i = 0; i < [[APP_MNG.dataAccess returnAlarms] count];i++)
+    {
+        if ([[[APP_MNG.dataAccess returnAlarms] objectAtIndex:i] snooze] != nil)
+        {
+            [[self cancelSnoozeBtOut] setHidden:NO];
+            break;
+        }
+        else
+        {
+            [[self cancelSnoozeBtOut] setHidden:YES];
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
