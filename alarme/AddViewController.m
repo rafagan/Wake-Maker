@@ -20,17 +20,7 @@
     if (self) {
         selectedMusic = nil;
         _editing = false;
-        if(!_editing)
-        {
-            _specificDays = [[NSMutableArray alloc] init];
-            for(int i = 0; i < 7; i++)
-            {
-                int j = i + 1;
-                UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
-                [self.view addGestureRecognizer:tap];
-                [[self specificDays] addObject:[NSString stringWithFormat:@"%d",j]];
-            }
-        }
+        _specificDays = [[NSMutableArray alloc] init];
         // Custom initialization
     }
     return self;
@@ -38,7 +28,18 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (_editing)
+    if(!_editing)
+    {
+        _specificDays = [[NSMutableArray alloc] init];
+        for(int i = 0; i < 7; i++)
+        {
+            int j = i + 1;
+            UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+            [self.view addGestureRecognizer:tap];
+            [[self specificDays] addObject:[NSString stringWithFormat:@"%d",j]];
+        }
+    }
+    else if (_editing)
     {
         [[self textField] setText:[[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row] alertBody]];
         _alarm = [[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row];
