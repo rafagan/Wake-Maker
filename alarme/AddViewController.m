@@ -18,7 +18,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        selectedMusic = nil;
         _editing = false;
         _specificDays = [[NSMutableArray alloc] init];
         // Custom initialization
@@ -238,14 +237,12 @@
     
     MPMediaItem* music = [[mediaItemCollection items]objectAtIndex:0];
     
+    selectedMusic = [Song new];
     selectedMusic.item = mediaItemCollection;
     selectedMusic.music = music;
     [selectedMusic reset];
-//    [selectedMusic playMusic];
     
-    MPMusicPlayerController* appMusicPlayer = [MPMusicPlayerController applicationMusicPlayer];
-    [appMusicPlayer setQueueWithItemCollection:selectedMusic.item];
-    [appMusicPlayer play];
+    [selectedMusic playMusic];
     
     [self.musicButton setTitle:selectedMusic.name forState:UIControlStateNormal];
 }
