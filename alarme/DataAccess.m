@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        _snoozeTimes = 0;
         data = [DataSourceDB new];
         alarms = [data getAllAlarms];
         achievements = [[NSMutableArray alloc] init];

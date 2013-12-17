@@ -27,6 +27,12 @@
                                        selector:@selector(clockUpdate:)
                                        userInfo:nil
                                         repeats:YES];
+        
+        [NSTimer scheduledTimerWithTimeInterval:20
+                                         target:self
+                                       selector:@selector(getSatisfiedAchievement:)
+                                       userInfo:nil
+                                        repeats:NO];
         // Custom initialization
     }
     return self;
@@ -129,4 +135,10 @@
     _clockLabel.text = currentTime;
 }
 
+- (void)getSatisfiedAchievement:(id)sender
+{
+    NSLog(@"Got Achievement");
+    if(![[[APP_MNG.dataAccess returnAchievements] objectAtIndex:2] isAchieved])
+        [[[APP_MNG.dataAccess returnAchievements] objectAtIndex:2] setIsAchieved:YES];
+}
 @end

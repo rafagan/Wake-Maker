@@ -36,9 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"On The First Try!" Description:@"Completed game without mistakes" Achieved:NO]];
-    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"PROCRASTINATOR" Description:@"Hitted snooze 4 times on a day" Achieved:YES]];
-    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"Satisfied Customer" Description:@"Didn't closed the app in 5 days!" Achieved:NO]];
+
     
     
     // Uncomment the following line to preserve selection between presentations.

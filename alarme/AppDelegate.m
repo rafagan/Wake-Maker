@@ -16,6 +16,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"On The First Try!" Description:@"Completed game without mistakes" Achieved:NO]];
+    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"PROCRASTINATOR" Description:@"Hitted snooze 4 times on a day" Achieved:NO]];
+    [APP_MNG.dataAccess addAchievement:[Achievement createAchievementWithName:@"Satisfied Customer" Description:@"Didn't closed the app in 8 hours!" Achieved:NO]];
+    
     MainViewController* mvc = [[MainViewController alloc] init];
     [self.window setRootViewController:mvc];
     // Override point for customization after application launch.
@@ -27,7 +31,7 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     NSLog(@"Received Notification");
-
+    
     GameViewController* gvc = [[GameViewController alloc] init];
     MainViewController* mvc = [[MainViewController alloc] init];
     [self.window setRootViewController:mvc];
