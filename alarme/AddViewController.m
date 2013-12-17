@@ -197,15 +197,12 @@
     else
         isMusic = true;
     
+    _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
+    
     if (!_editing)
-    {
-        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
-    }
-    else
-    {
+    else {
         [APP_MNG.dataAccess removeAlarm:[[APP_MNG.dataAccess returnAlarms] objectAtIndex:_row]];
-        _alarm = [Alarm createAlarmWithMinutes:(int)minutes Hour:(int)hour Description:[[self textField] text] Days:_specificDays Music:selectedMusic AlarmMusicSystem:isMusic];
         [APP_MNG.dataAccess addAlarm:_alarm];
     }
     [self dismissViewControllerAnimated:YES completion:nil];

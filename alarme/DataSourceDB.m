@@ -133,7 +133,7 @@
     
     if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
         NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO alarm (description, hour, minute, days) VALUES (\"%s\", \"%d\", \"%d\", \"%ld\")",
-                               [alarm.description UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days]];
+                               [alarm.alertBody UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days]];
         const char *insert_stmt = [insertSQL UTF8String];
         if (sqlite3_exec(_systemDatabase, insert_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             state = NO;
@@ -146,7 +146,7 @@
     
     if(!state) {printf("%s\n",errMsg);return -1;}
     
-    return [self getAlarmByDescription:alarm.description].myId;
+    return [self getAlarmByDescription:alarm.alertBody].myId;
 }
 
 - (BOOL)removeAlarm:(Alarm *)alarm
@@ -163,6 +163,28 @@
         else {
             state = YES;
         }
+        sqlite3_close(_systemDatabase);
+    } else {
+        state = NO;
+    }
+    
+    return state;
+}
+
+- (BOOL)updateAlarm:(Alarm *)alarm
+{
+    char *errMsg;
+    const char *dbpath = [_databasePath UTF8String];
+    BOOL state;
+    
+    if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
+        NSString *updateSQL = [NSString stringWithFormat:@"UPDATE alarm SET description = \"%s\", hour = \"%d\", minute = \"%d\", days = \"%ld\" WHERE id = \"%d\"",
+                               [alarm.description UTF8String], alarm.hour, alarm.minutes, (long)[Alarm daysArrayToDaysMask:alarm.days], alarm.myId];
+        const char *update_stmt = [updateSQL UTF8String];
+        if (sqlite3_exec(_systemDatabase, update_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+            state = NO;
+        else
+            state = YES;
         sqlite3_close(_systemDatabase);
     } else {
         state = NO;

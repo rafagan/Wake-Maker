@@ -33,6 +33,11 @@
     if(alarm.myId < 0) assert("Erro ao inserir alarme no banco de dados");
 }
 
+- (void)updateAlarm:(Alarm *)alarm
+{
+    [data updateAlarm:alarm];
+}
+
 - (void)removeAlarm:(Alarm *)alarm
 {
     for (int i = 0; i < alarm.qtdDays; i++)

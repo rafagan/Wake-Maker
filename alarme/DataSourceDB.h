@@ -18,6 +18,7 @@
 - (NSMutableArray*)getAllAlarms;
 - (Alarm*)getAlarmByDescription:(NSString*)desc;
 - (NSInteger)insertAlarm:(Alarm*)alarm;
-- (BOOL)removeAlarm:(Alarm *)alarm;
+- (BOOL)removeAlarm:(Alarm*)alarm;
+- (BOOL)updateAlarm:(Alarm*)alarm;
 
 @end

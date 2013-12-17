@@ -15,6 +15,7 @@
 }
 
 - (void)addAlarm:(Alarm*)alarm;
+- (void)updateAlarm:(Alarm*)alarm;
 - (void)removeAlarm:(Alarm*)alarm;
 - (NSMutableArray*)returnAlarms;
 

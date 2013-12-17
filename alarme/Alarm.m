@@ -100,27 +100,20 @@
 {
     NSInteger d = 0;
     
-    if ([ds containsObject:@"1"]) { //dom
+    if ([ds containsObject:@"1"]) //dom
         d |= 0b0000001;
-    }
-    if ([ds containsObject:@"2"]) { //seg
+    if ([ds containsObject:@"2"]) //seg
         d |= 0b0000010;
-    }
-    if ([ds containsObject:@"3"]) { //ter
+    if ([ds containsObject:@"3"]) //ter
         d |= 0b0000100;
-    }
-    if ([ds containsObject:@"4"]) { //qua
+    if ([ds containsObject:@"4"]) //qua
         d |= 0b0001000;
-    }
-    if ([ds containsObject:@"5"]) { //qui
+    if ([ds containsObject:@"5"]) //qui
         d |= 0b0010000;
-    }
-    if ([ds containsObject:@"6"]) { //sex
+    if ([ds containsObject:@"6"]) //sex
         d |= 0b0100000;
-    }
-    if ([ds containsObject:@"7"]) { //sab
+    if ([ds containsObject:@"7"]) //sab
         d |= 0b1000000;
-    }
     return d;
 }
 
