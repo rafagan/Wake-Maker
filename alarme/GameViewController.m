@@ -31,6 +31,12 @@
     return self;
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [appAlarmPlayer stop];
+    [_audioPlayer stop];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     NSDate* now = [[NSDate alloc] init];
