@@ -19,6 +19,7 @@
 - (IBAction)alarmsBtAc:(id)sender;
 - (IBAction)nightBtAc:(id)sender;
 - (IBAction)cancelSnoozeBtAc:(id)sender;
+- (IBAction)achvmntBtAc:(id)sender;
 
 - (void)clockUpdate:(id)sender;
 @end

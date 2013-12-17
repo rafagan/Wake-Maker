@@ -57,6 +57,16 @@
                         <action selector="cancelSnoozeBtAc:" destination="-1" eventType="touchUpInside" id="gTr-rp-bqj"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-Zr-jFY">
+                    <rect key="frame" x="106" y="463" width="109" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Achievements">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="achvmntBtAc:" destination="-1" eventType="touchUpInside" id="vF2-un-ZH7"/>
+                    </connections>
+                </button>
             </subviews>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Alarm.h"
 #import "GameViewController.h"
+#import "AchievementViewController.h"
 
 @interface MainViewController ()
 
@@ -110,6 +111,12 @@
     
     GameViewController* gvc = [[GameViewController alloc] init];
     [self presentViewController:gvc animated:YES completion:nil];
+}
+
+- (IBAction)achvmntBtAc:(id)sender
+{
+    AchievementViewController* avc = [[AchievementViewController alloc] init];
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 - (void)clockUpdate:(id)sender

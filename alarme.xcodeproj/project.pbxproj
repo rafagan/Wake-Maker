@@ -23,6 +23,13 @@
 		CD495466185E9F980028617E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD495465185E9F980028617E /* MediaPlayer.framework */; };
 		CD88B9491858D57400B978A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B9481858D57400B978A1 /* AVFoundation.framework */; };
 		CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD88B94A1858E85F00B978A1 /* alarm.m4a */; };
+		CDAAB80A185FFD160011E328 /* AchieveCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAAB807185FFD160011E328 /* AchieveCustomCell.m */; };
+		CDAAB80B185FFD160011E328 /* AchievementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAAB809185FFD160011E328 /* AchievementViewController.m */; };
+		CDAAB80E185FFD210011E328 /* AchieveCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAAB80C185FFD210011E328 /* AchieveCustomCell.xib */; };
+		CDAAB80F185FFD210011E328 /* AchievementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAAB80D185FFD210011E328 /* AchievementViewController.xib */; };
+		CDAAB812185FFDF80011E328 /* Achievement.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAAB811185FFDF80011E328 /* Achievement.m */; };
+		CDAAB81418600E350011E328 /* AchievementHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDAAB81318600E350011E328 /* AchievementHeaderView.xib */; };
+		CDAAB816186012210011E328 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAAB815186012210011E328 /* check.png */; };
 		CDC1E0F618579D1B00F2D6A6 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */; };
 		CDDD78441857912300A27585 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDD78431857912300A27585 /* Foundation.framework */; };
 		CDDD78461857912300A27585 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDD78451857912300A27585 /* CoreGraphics.framework */; };
@@ -79,6 +86,16 @@
 		CD495465185E9F980028617E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CD88B9481858D57400B978A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CD88B94A1858E85F00B978A1 /* alarm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm.m4a; sourceTree = "<group>"; };
+		CDAAB806185FFD160011E328 /* AchieveCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchieveCustomCell.h; sourceTree = "<group>"; };
+		CDAAB807185FFD160011E328 /* AchieveCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchieveCustomCell.m; sourceTree = "<group>"; };
+		CDAAB808185FFD160011E328 /* AchievementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchievementViewController.h; sourceTree = "<group>"; };
+		CDAAB809185FFD160011E328 /* AchievementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AchievementViewController.m; sourceTree = "<group>"; };
+		CDAAB80C185FFD210011E328 /* AchieveCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchieveCustomCell.xib; sourceTree = "<group>"; };
+		CDAAB80D185FFD210011E328 /* AchievementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementViewController.xib; sourceTree = "<group>"; };
+		CDAAB810185FFDF80011E328 /* Achievement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievement.h; sourceTree = "<group>"; };
+		CDAAB811185FFDF80011E328 /* Achievement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Achievement.m; sourceTree = "<group>"; };
+		CDAAB81318600E350011E328 /* AchievementHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AchievementHeaderView.xib; sourceTree = "<group>"; };
+		CDAAB815186012210011E328 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		CDDD78401857912300A27585 /* alarme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alarme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDD78431857912300A27585 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -152,6 +169,7 @@
 		CD495412185A7B0A0028617E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CDAAB815186012210011E328 /* check.png */,
 				CD495413185A7B1C0028617E /* symbol1.jpg */,
 				CD495414185A7B1C0028617E /* symbol2.jpg */,
 				CD495415185A7B1C0028617E /* symbol3.jpg */,
@@ -242,12 +260,15 @@
 		CDDD787F185791DF00A27585 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDAAB80C185FFD210011E328 /* AchieveCustomCell.xib */,
+				CDAAB80D185FFD210011E328 /* AchievementViewController.xib */,
 				CD49540A185A7AD90028617E /* GameViewController.xib */,
 				CDF4CF961857E85100643587 /* AddViewController.xib */,
 				CDDD78741857916B00A27585 /* MainViewController.xib */,
 				CDDD787C185791D800A27585 /* AlarmViewController.xib */,
 				CDC1E0F518579D1B00F2D6A6 /* HeaderView.xib */,
 				CD40DB81185A33F9005F5D1C /* CustomCell.xib */,
+				CDAAB81318600E350011E328 /* AchievementHeaderView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -255,6 +276,8 @@
 		CDDD7880185791EA00A27585 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDAAB808185FFD160011E328 /* AchievementViewController.h */,
+				CDAAB809185FFD160011E328 /* AchievementViewController.m */,
 				CD495407185A7ACE0028617E /* GameViewController.h */,
 				CD495408185A7ACE0028617E /* GameViewController.m */,
 				CDDD78721857916B00A27585 /* MainViewController.h */,
@@ -265,6 +288,8 @@
 				CDF4CF951857E85100643587 /* AddViewController.m */,
 				CD40DB7B185A2342005F5D1C /* CustomCell.h */,
 				CD40DB7C185A2342005F5D1C /* CustomCell.m */,
+				CDAAB806185FFD160011E328 /* AchieveCustomCell.h */,
+				CDAAB807185FFD160011E328 /* AchieveCustomCell.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,6 +316,8 @@
 				CD49540D185A7AF30028617E /* Symbol.m */,
 				CDDD7885185792E800A27585 /* Alarm.h */,
 				CDDD7886185792E800A27585 /* Alarm.m */,
+				CDAAB810185FFDF80011E328 /* Achievement.h */,
+				CDAAB811185FFDF80011E328 /* Achievement.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -370,17 +397,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDAAB816186012210011E328 /* check.png in Resources */,
 				CDDD787E185791D800A27585 /* AlarmViewController.xib in Resources */,
 				CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */,
 				CD495418185A7B1C0028617E /* symbol2.jpg in Resources */,
 				CDC1E0F618579D1B00F2D6A6 /* HeaderView.xib in Resources */,
 				CD49540B185A7AD90028617E /* GameViewController.xib in Resources */,
 				CD495417185A7B1C0028617E /* symbol1.jpg in Resources */,
+				CDAAB80F185FFD210011E328 /* AchievementViewController.xib in Resources */,
+				CDAAB80E185FFD210011E328 /* AchieveCustomCell.xib in Resources */,
 				CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */,
 				CDF4CF981857E85100643587 /* AddViewController.xib in Resources */,
 				CDDD784E1857912300A27585 /* InfoPlist.strings in Resources */,
 				CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */,
 				CD49541A185A7B1C0028617E /* symbol4.jpg in Resources */,
+				CDAAB81418600E350011E328 /* AchievementHeaderView.xib in Resources */,
 				CDDD78761857916B00A27585 /* MainViewController.xib in Resources */,
 				CDDD78561857912300A27585 /* Images.xcassets in Resources */,
 				CD495419185A7B1C0028617E /* symbol3.jpg in Resources */,
@@ -403,9 +434,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDDD787D185791D800A27585 /* AlarmViewController.m in Sources */,
+				CDAAB812185FFDF80011E328 /* Achievement.m in Sources */,
 				CD49540E185A7AF30028617E /* Symbol.m in Sources */,
 				CDDD788A1857938B00A27585 /* DataAccess.m in Sources */,
+				CDAAB80B185FFD160011E328 /* AchievementViewController.m in Sources */,
 				CDDD7887185792E800A27585 /* Alarm.m in Sources */,
+				CDAAB80A185FFD160011E328 /* AchieveCustomCell.m in Sources */,
 				CD40DB7D185A2342005F5D1C /* CustomCell.m in Sources */,
 				CDDD78841857925600A27585 /* ApplicationManager.m in Sources */,
 				CDDD78541857912300A27585 /* AppDelegate.m in Sources */,

@@ -21,6 +21,7 @@
     if (self) {
         data = [DataSourceDB new];
         alarms = [data getAllAlarms];
+        achievements = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -49,9 +50,18 @@
     [data removeAlarm:alarm];
 }
 
+- (void)addAchievement:(Achievement *)achieve
+{
+    [achievements addObject:achieve];
+}
+
 - (NSMutableArray *)returnAlarms
 {
     return alarms;
 }
 
+- (NSMutableArray *)returnAchievements
+{
+    return achievements;
+}
 @end
