@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "Alarm.h"
 #import "GameViewController.h"
+#import "AchievementViewController.h"
 
 @interface MainViewController ()
 
@@ -26,6 +27,12 @@
                                        selector:@selector(clockUpdate:)
                                        userInfo:nil
                                         repeats:YES];
+        
+        [NSTimer scheduledTimerWithTimeInterval:20
+                                         target:self
+                                       selector:@selector(getSatisfiedAchievement:)
+                                       userInfo:nil
+                                        repeats:NO];
         // Custom initialization
     }
     return self;
@@ -112,6 +119,12 @@
     [self presentViewController:gvc animated:YES completion:nil];
 }
 
+- (IBAction)achvmntBtAc:(id)sender
+{
+    AchievementViewController* avc = [[AchievementViewController alloc] init];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 - (void)clockUpdate:(id)sender
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -122,4 +135,10 @@
     _clockLabel.text = currentTime;
 }
 
+- (void)getSatisfiedAchievement:(id)sender
+{
+    NSLog(@"Got Achievement");
+    if(![[[APP_MNG.dataAccess returnAchievements] objectAtIndex:2] isAchieved])
+        [[[APP_MNG.dataAccess returnAchievements] objectAtIndex:2] setIsAchieved:YES];
+}
 @end

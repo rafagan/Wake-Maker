@@ -18,6 +18,7 @@
     int index;
     float volume;
     bool typeIsMusic;
+    bool canGetAchievement;
     MPMusicPlayerController* appAlarmPlayer;
 }
 - (IBAction)okBt:(id)sender;

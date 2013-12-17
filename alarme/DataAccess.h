@@ -8,15 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "Alarm.h"
+#import "Achievement.h"
 
 @interface DataAccess : NSObject
 {
     NSMutableArray* alarms;
+    NSMutableArray* achievements;
 }
+
+@property int snoozeTimes;
 
 - (void)addAlarm:(Alarm*)alarm;
 - (void)updateAlarm:(Alarm*)alarm;
 - (void)removeAlarm:(Alarm*)alarm;
+- (void)addAchievement:(Achievement*)achieve;
 - (NSMutableArray*)returnAlarms;
+- (NSMutableArray*)returnAchievements;
 
 @end

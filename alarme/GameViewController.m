@@ -21,6 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        canGetAchievement = true;
         appAlarmPlayer = [MPMusicPlayerController applicationMusicPlayer];
         points = 0;
         volume = 0.5;
@@ -136,6 +137,9 @@
         
         if (points == 1)
         {
+            if(canGetAchievement && ![[[APP_MNG.dataAccess returnAchievements] objectAtIndex:0] isAchieved])
+                [[[APP_MNG.dataAccess returnAchievements]objectAtIndex:0]setIsAchieved:YES];
+            
             if (typeIsMusic)
                 [appAlarmPlayer stop];
             else
@@ -154,6 +158,7 @@
     }
     else
     {
+        canGetAchievement = false;
         [self showComb];
     }
 }
@@ -208,6 +213,7 @@
 
 - (IBAction)skipBt:(id)sender
 {
+    canGetAchievement = false;
     volume+=0.1;
     [_audioPlayer setVolume:volume];
     appAlarmPlayer.volume = volume;
@@ -227,6 +233,10 @@
 
 - (IBAction)snoozeBtAc:(id)sender
 {
+    APP_MNG.dataAccess.snoozeTimes++;
+    if (APP_MNG.dataAccess.snoozeTimes >= 4 && [[APP_MNG.dataAccess returnAchievements] objectAtIndex:1])
+        [[[APP_MNG.dataAccess returnAchievements] objectAtIndex:1] setIsAchieved:YES];
+        
     if (typeIsMusic)
         [appAlarmPlayer stop];
     else
