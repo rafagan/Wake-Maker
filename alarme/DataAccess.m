@@ -41,6 +41,7 @@
     }
     
     [alarms removeObject:alarm];
+    [data removeAlarm:alarm];
 }
 
 - (NSMutableArray *)returnAlarms
