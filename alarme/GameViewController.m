@@ -135,7 +135,7 @@
         points ++;
         [[self pointsLabel] setText:[NSString stringWithFormat:@"%d",points]];
         
-        if (points == 2)
+        if (points == 1)
         {
             if (typeIsMusic)
                 [appAlarmPlayer stop];
@@ -193,7 +193,7 @@
     s = [rando objectAtIndex:3];
     [s.imgView setFrame:rect];
     [self.view addSubview:[[rando objectAtIndex:3] imgView]];
-    [NSTimer scheduledTimerWithTimeInterval:2.5
+    [NSTimer scheduledTimerWithTimeInterval:3
                                      target:self
                                    selector:@selector(hideComb)
                                    userInfo:nil

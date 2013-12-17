@@ -115,7 +115,7 @@
                 int hour = sqlite3_column_int(statement, 2);
                 int minute = sqlite3_column_int(statement, 3);
                 NSInteger days = sqlite3_column_int(statement, 4);
-                
+
                 alarm = [Alarm createAlarmWithMinutes:minute Hour:hour Description:description DaysMask:days Music:nil AlarmMusicSystem:false];
                 alarm.myId = myId;
             }
