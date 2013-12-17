@@ -156,7 +156,7 @@
     BOOL state;
     
     if (sqlite3_open(dbpath, &_systemDatabase) == SQLITE_OK) {
-        NSString *removeSQL = [NSString stringWithFormat:@"DELETE FROM CONTACTS WHERE id = %d", alarm.myId];
+        NSString *removeSQL = [NSString stringWithFormat:@"DELETE FROM alarm WHERE id = %d", alarm.myId];
         const char *remove_stmt = [removeSQL UTF8String];
         if (sqlite3_exec(_systemDatabase, remove_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             state = NO;
