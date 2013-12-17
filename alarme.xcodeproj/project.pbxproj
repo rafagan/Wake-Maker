@@ -22,6 +22,12 @@
 		CD495419185A7B1C0028617E /* symbol3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495415185A7B1C0028617E /* symbol3.jpg */; };
 		CD49541A185A7B1C0028617E /* symbol4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD495416185A7B1C0028617E /* symbol4.jpg */; };
 		CD495466185E9F980028617E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD495465185E9F980028617E /* MediaPlayer.framework */; };
+		CD55CC411860234400890F02 /* trophy-icon-614x460.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC401860234400890F02 /* trophy-icon-614x460.png */; };
+		CD55CC43186024DE00890F02 /* alarmIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC42186024DE00890F02 /* alarmIcon.png */; };
+		CD55CC48186026F800890F02 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC44186026F800890F02 /* ok.png */; };
+		CD55CC49186026F800890F02 /* skip.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC45186026F800890F02 /* skip.png */; };
+		CD55CC4A186026F800890F02 /* snooze.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC46186026F800890F02 /* snooze.png */; };
+		CD55CC4B186026F800890F02 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = CD55CC47186026F800890F02 /* start.png */; };
 		CD88B9491858D57400B978A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B9481858D57400B978A1 /* AVFoundation.framework */; };
 		CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = CD88B94A1858E85F00B978A1 /* alarm.m4a */; };
 		CDAAB80A185FFD160011E328 /* AchieveCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAAB807185FFD160011E328 /* AchieveCustomCell.m */; };
@@ -87,6 +93,12 @@
 		CD495415185A7B1C0028617E /* symbol3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol3.jpg; sourceTree = "<group>"; };
 		CD495416185A7B1C0028617E /* symbol4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = symbol4.jpg; sourceTree = "<group>"; };
 		CD495465185E9F980028617E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		CD55CC401860234400890F02 /* trophy-icon-614x460.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trophy-icon-614x460.png"; sourceTree = "<group>"; };
+		CD55CC42186024DE00890F02 /* alarmIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alarmIcon.png; sourceTree = "<group>"; };
+		CD55CC44186026F800890F02 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		CD55CC45186026F800890F02 /* skip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skip.png; sourceTree = "<group>"; };
+		CD55CC46186026F800890F02 /* snooze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snooze.png; sourceTree = "<group>"; };
+		CD55CC47186026F800890F02 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
 		CD88B9481858D57400B978A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CD88B94A1858E85F00B978A1 /* alarm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm.m4a; sourceTree = "<group>"; };
 		CDAAB806185FFD160011E328 /* AchieveCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AchieveCustomCell.h; sourceTree = "<group>"; };
@@ -172,6 +184,12 @@
 		CD495412185A7B0A0028617E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CD55CC44186026F800890F02 /* ok.png */,
+				CD55CC45186026F800890F02 /* skip.png */,
+				CD55CC46186026F800890F02 /* snooze.png */,
+				CD55CC47186026F800890F02 /* start.png */,
+				CD55CC42186024DE00890F02 /* alarmIcon.png */,
+				CD55CC401860234400890F02 /* trophy-icon-614x460.png */,
 				CDAAB815186012210011E328 /* check.png */,
 				CD495413185A7B1C0028617E /* symbol1.jpg */,
 				CD495414185A7B1C0028617E /* symbol2.jpg */,
@@ -404,6 +422,7 @@
 			files = (
 				CDAAB816186012210011E328 /* check.png in Resources */,
 				CDDD787E185791D800A27585 /* AlarmViewController.xib in Resources */,
+				CD55CC43186024DE00890F02 /* alarmIcon.png in Resources */,
 				CD88B94B1858E85F00B978A1 /* alarm.m4a in Resources */,
 				CD495418185A7B1C0028617E /* symbol2.jpg in Resources */,
 				CDC1E0F618579D1B00F2D6A6 /* HeaderView.xib in Resources */,
@@ -411,14 +430,19 @@
 				CD495417185A7B1C0028617E /* symbol1.jpg in Resources */,
 				CDAAB80F185FFD210011E328 /* AchievementViewController.xib in Resources */,
 				CDAAB80E185FFD210011E328 /* AchieveCustomCell.xib in Resources */,
+				CD55CC4B186026F800890F02 /* start.png in Resources */,
 				CD40DB84185A4463005F5D1C /* alarm30.mp3 in Resources */,
+				CD55CC411860234400890F02 /* trophy-icon-614x460.png in Resources */,
 				CDF4CF981857E85100643587 /* AddViewController.xib in Resources */,
 				CDDD784E1857912300A27585 /* InfoPlist.strings in Resources */,
+				CD55CC49186026F800890F02 /* skip.png in Resources */,
+				CD55CC48186026F800890F02 /* ok.png in Resources */,
 				CD40DB82185A33F9005F5D1C /* CustomCell.xib in Resources */,
 				CD49541A185A7B1C0028617E /* symbol4.jpg in Resources */,
 				CDAAB81418600E350011E328 /* AchievementHeaderView.xib in Resources */,
 				CDDD78761857916B00A27585 /* MainViewController.xib in Resources */,
 				CDDD78561857912300A27585 /* Images.xcassets in Resources */,
+				CD55CC4A186026F800890F02 /* snooze.png in Resources */,
 				CD495419185A7B1C0028617E /* symbol3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

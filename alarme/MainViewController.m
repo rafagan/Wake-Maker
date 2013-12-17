@@ -28,7 +28,7 @@
                                        userInfo:nil
                                         repeats:YES];
         
-        [NSTimer scheduledTimerWithTimeInterval:20
+        [NSTimer scheduledTimerWithTimeInterval:28800
                                          target:self
                                        selector:@selector(getSatisfiedAchievement:)
                                        userInfo:nil
