@@ -8,6 +8,7 @@ Run in iOS 8 or above.
 
 Video: https://www.youtube.com/watch?v=knWNT9n5Im4.
 
+Feel free to copy anything, its under the Apache License version 2.0.
 We really want to work together again in this project, soon...
 
 Last revision in December, 2014.
