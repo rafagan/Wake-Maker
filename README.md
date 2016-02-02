@@ -6,6 +6,8 @@ Wake Maker is a prototype of an alarm clock with gamefication, made in one week 
 The app is integrated with local iOS music library and SQLite, and the user need to solve a mini game to stop the alarm song.
 Run in iOS 8 or above.
 
+Video: https://www.youtube.com/watch?v=knWNT9n5Im4.
+
 We really want to work together again in this project, soon...
 
 Last revision in December, 2014.
